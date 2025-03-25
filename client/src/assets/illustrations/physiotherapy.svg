@@ -1,48 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#F8FAFC"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="physioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6A5ACD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#F8F9FA" rx="10" ry="10" />
   
-  <!-- Physiotherapist -->
-  <circle cx="150" cy="90" r="20" fill="#BAE6FD" stroke="#0284C7" stroke-width="2"/>
-  <path d="M145 85C145 85 150 80 155 85C160 90 155 95 155 95" stroke="#0284C7" stroke-width="2"/>
-  <circle cx="143" cy="88" r="2" fill="#0284C7"/>
-  <circle cx="157" cy="88" r="2" fill="#0284C7"/>
-  <path d="M150 110V160" stroke="#0284C7" stroke-width="2"/>
-  <path d="M150 120H175" stroke="#0284C7" stroke-width="2"/>
-  <path d="M150 160L130 210" stroke="#0284C7" stroke-width="2"/>
-  <path d="M150 160L170 210" stroke="#0284C7" stroke-width="2"/>
-  <path d="M175 120L190 125" stroke="#0284C7" stroke-width="2"/>
-  <path d="M175 120V125" stroke="#0284C7" stroke-width="2"/>
-  <path d="M190 125L200 150" stroke="#0284C7" stroke-width="2"/>
+  <!-- Abstract leg/joint illustration -->
+  <g transform="translate(200, 150)">
+    <!-- Background circle -->
+    <circle cx="0" cy="0" r="100" fill="#F0F4FF" />
+    
+    <!-- Abstract joint -->
+    <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="url(#physioGradient)" stroke-width="4" />
+    <circle cx="0" cy="0" r="20" fill="#F0F4FF" stroke="#6A5ACD" stroke-width="2" stroke-dasharray="3,3" />
+    
+    <!-- Abstract bones/limbs -->
+    <path d="M0 -30 L0 -90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    <path d="M0 30 L-50 90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    <path d="M0 30 L50 90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    
+    <!-- Movement arcs -->
+    <path d="M-70 0 A70 70 0 0 1 70 0" fill="none" stroke="#4169E1" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    <path d="M-50 -20 A50 50 0 0 1 50 -20" fill="none" stroke="#4169E1" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    
+    <!-- Abstract healing energy -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#4169E1" stroke-width="1" opacity="0.5" />
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#6A5ACD" stroke-width="1" opacity="0.4" />
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#4169E1" stroke-width="1" opacity="0.3" />
+    
+    <!-- Direction indicators -->
+    <path d="M-40 -40 L-20 -40 L-30 -30 Z" fill="#6A5ACD" opacity="0.7" />
+    <path d="M40 -40 L20 -40 L30 -30 Z" fill="#6A5ACD" opacity="0.7" />
+  </g>
   
-  <!-- Patient -->
-  <circle cx="250" cy="120" r="20" fill="#DBEAFE" stroke="#0284C7" stroke-width="2"/>
-  <path d="M245 115C245 115 250 110 255 115" stroke="#0284C7" stroke-width="2"/>
-  <circle cx="243" cy="118" r="2" fill="#0284C7"/>
-  <circle cx="257" cy="118" r="2" fill="#0284C7"/>
-  <path d="M250 140V190" stroke="#0284C7" stroke-width="2"/>
-  <path d="M250 190L235 240" stroke="#0284C7" stroke-width="2" stroke-dasharray="4 2"/>
-  <path d="M250 190L265 240" stroke="#0284C7" stroke-width="2" stroke-dasharray="4 2"/>
-  <path d="M250 150H225" stroke="#0284C7" stroke-width="2"/>
-  
-  <!-- Exercise Area -->
-  <rect x="200" y="180" width="100" height="10" rx="5" fill="#BAE6FD" stroke="#0284C7" stroke-width="2"/>
-  <rect x="100" y="240" width="100" height="10" rx="5" fill="#BAE6FD" stroke="#0284C7" stroke-width="2"/>
-  
-  <!-- Measuring Markers -->
-  <path d="M320 130L320 250" stroke="#0284C7" stroke-width="2" stroke-dasharray="5 5"/>
-  <path d="M310 130L330 130" stroke="#0284C7" stroke-width="2"/>
-  <path d="M310 250L330 250" stroke="#0284C7" stroke-width="2"/>
-  <path d="M320 130L335 140" stroke="#0284C7" stroke-width="2"/>
-  <path d="M320 250L335 240" stroke="#0284C7" stroke-width="2"/>
-  <rect x="335" y="175" width="50" height="30" rx="5" fill="white" stroke="#0284C7" stroke-width="2"/>
-  <text x="342" y="194" font-family="Arial" font-size="10" fill="#0284C7">+20°</text>
-  
-  <!-- Therapy Tools -->
-  <circle cx="80" cy="150" r="15" fill="#E0F2FE" stroke="#0284C7" stroke-width="2"/>
-  <path d="M70 150H90" stroke="#0284C7" stroke-width="2"/>
-  <path d="M80 140V160" stroke="#0284C7" stroke-width="2"/>
-  
-  <rect x="60" cy="180" width="40" height="10" rx="5" fill="#E0F2FE" stroke="#0284C7" stroke-width="2"/>
-  <rect x="60" cy="200" width="40" height="5" rx="2" fill="#0284C7"/>
+  <!-- Abstract decorative elements -->
+  <circle cx="40" cy="40" r="15" fill="#6A5ACD" opacity="0.2" />
+  <circle cx="360" cy="260" r="20" fill="#4169E1" opacity="0.2" />
 </svg>
