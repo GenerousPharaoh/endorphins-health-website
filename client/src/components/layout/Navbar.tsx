@@ -26,48 +26,49 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 bg-white shadow-lg transition-all ${isScrolled ? 'py-2' : 'py-4'}`}>
+    <header className={`fixed w-full top-0 z-50 bg-white shadow-lg transition-all ${isScrolled ? 'py-1' : 'py-2'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/80 to-primary"></div>
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-primary/90 to-primary"></div>
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-primary text-2xl font-bold">Endorphins</span>
-              <span className="text-secondary text-2xl font-medium ml-1">Health</span>
+              <div className="mr-2 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-primary text-lg font-black">E</span>
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-primary text-lg font-extrabold tracking-tight">ENDORPHINS</span>
+                <span className="text-gray-600 text-xs font-medium tracking-wider">HEALTH & WELLNESS</span>
+              </div>
             </Link>
           </div>
 
-          <nav className="hidden md:flex space-x-6">
-            <a href="#services" className="font-heading text-foreground hover:text-primary px-3 py-2 rounded-md transition-all relative group">
-              <span className="text-xs font-bold text-primary absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity">01</span>
-              <span className="font-medium">Services</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          <nav className="hidden md:flex space-x-4">
+            <a href="#services" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
+              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
+              Services
             </a>
-            <a href="#team" className="font-heading text-foreground hover:text-primary px-3 py-2 rounded-md transition-all relative group">
-              <span className="text-xs font-bold text-primary absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity">02</span>
-              <span className="font-medium">Our Team</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            <a href="#team" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
+              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
+              Team
             </a>
-            <a href="#testimonials" className="font-heading text-foreground hover:text-primary px-3 py-2 rounded-md transition-all relative group">
-              <span className="text-xs font-bold text-primary absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity">03</span>
-              <span className="font-medium">Testimonials</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            <a href="#testimonials" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
+              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
+              Reviews
             </a>
-            <a href="#contact" className="font-heading text-foreground hover:text-primary px-3 py-2 rounded-md transition-all relative group">
-              <span className="text-xs font-bold text-primary absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity">04</span>
-              <span className="font-medium">Contact</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            <a href="#contact" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
+              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
+              Contact
             </a>
           </nav>
 
           <div className="hidden md:block">
             <Button 
               asChild
-              className="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-2 rounded-md transition-all"
+              className="bg-primary hover:bg-primary/90 text-white font-bold px-5 py-1.5 rounded-md text-sm uppercase tracking-wide transition-all shadow-md"
             >
               <a href="#booking" className="flex items-center">
-                <span>Book Now</span>
-                <span className="ml-2 text-xs font-bold">→</span>
+                <span>Book</span>
+                <span className="ml-1 font-bold">→</span>
               </a>
             </Button>
           </div>
@@ -96,47 +97,47 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="md:hidden bg-white pb-4 overflow-hidden"
             >
-              <div className="flex flex-col space-y-1 pt-4">
+              <div className="flex flex-col space-y-1 pt-3">
                 <a 
                   href="#services" 
-                  className="font-heading text-foreground hover:text-primary hover:bg-primary/5 px-4 py-3 rounded-md transition-all flex items-center"
+                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <span className="text-primary font-bold mr-2">01</span>
-                  <span>Services</span>
+                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
+                  Services
                 </a>
                 <a 
                   href="#team" 
-                  className="font-heading text-foreground hover:text-primary hover:bg-primary/5 px-4 py-3 rounded-md transition-all flex items-center"
+                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <span className="text-primary font-bold mr-2">02</span>
-                  <span>Our Team</span>
+                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
+                  Team
                 </a>
                 <a 
                   href="#testimonials" 
-                  className="font-heading text-foreground hover:text-primary hover:bg-primary/5 px-4 py-3 rounded-md transition-all flex items-center"
+                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <span className="text-primary font-bold mr-2">03</span>
-                  <span>Testimonials</span>
+                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
+                  Reviews
                 </a>
                 <a 
                   href="#contact" 
-                  className="font-heading text-foreground hover:text-primary hover:bg-primary/5 px-4 py-3 rounded-md transition-all flex items-center"
+                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <span className="text-primary font-bold mr-2">04</span>
-                  <span>Contact</span>
+                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
+                  Contact
                 </a>
-                <div className="pt-2 pb-1">
+                <div className="pt-3 pb-1">
                   <a 
                     href="#booking" 
-                    className="bg-primary hover:bg-primary/90 text-white font-heading font-medium mx-4 py-3 rounded-md text-center transition-all flex items-center justify-center"
+                    className="bg-primary hover:bg-primary/90 text-white font-heading font-medium mx-4 py-2 rounded-md text-center transition-all flex items-center justify-center text-sm"
                     onClick={closeMobileMenu}
                   >
-                    <span>Book Now</span>
-                    <span className="ml-2 text-xs font-bold">→</span>
+                    <span>BOOK NOW</span>
+                    <span className="ml-2 font-bold">→</span>
                   </a>
                 </div>
               </div>
