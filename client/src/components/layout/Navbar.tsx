@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,11 +30,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link href="/">
-              <a className="flex items-center">
-                <span className="text-primary text-2xl font-bold">Endorphins</span>
-                <span className="text-secondary text-2xl font-medium ml-1">Health</span>
-              </a>
+            <Link href="/" className="flex items-center">
+              <span className="text-primary text-2xl font-bold">Endorphins</span>
+              <span className="text-secondary text-2xl font-medium ml-1">Health</span>
             </Link>
           </div>
 

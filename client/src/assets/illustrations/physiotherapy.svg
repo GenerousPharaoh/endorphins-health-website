@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="physioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6A5ACD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#F8F9FA" rx="10" ry="10" />
+  
+  <!-- Abstract leg/joint illustration -->
+  <g transform="translate(200, 150)">
+    <!-- Background circle -->
+    <circle cx="0" cy="0" r="100" fill="#F0F4FF" />
+    
+    <!-- Abstract joint -->
+    <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="url(#physioGradient)" stroke-width="4" />
+    <circle cx="0" cy="0" r="20" fill="#F0F4FF" stroke="#6A5ACD" stroke-width="2" stroke-dasharray="3,3" />
+    
+    <!-- Abstract bones/limbs -->
+    <path d="M0 -30 L0 -90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    <path d="M0 30 L-50 90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    <path d="M0 30 L50 90" stroke="#6A5ACD" stroke-width="15" stroke-linecap="round" />
+    
+    <!-- Movement arcs -->
+    <path d="M-70 0 A70 70 0 0 1 70 0" fill="none" stroke="#4169E1" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    <path d="M-50 -20 A50 50 0 0 1 50 -20" fill="none" stroke="#4169E1" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    
+    <!-- Abstract healing energy -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#4169E1" stroke-width="1" opacity="0.5" />
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#6A5ACD" stroke-width="1" opacity="0.4" />
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#4169E1" stroke-width="1" opacity="0.3" />
+    
+    <!-- Direction indicators -->
+    <path d="M-40 -40 L-20 -40 L-30 -30 Z" fill="#6A5ACD" opacity="0.7" />
+    <path d="M40 -40 L20 -40 L30 -30 Z" fill="#6A5ACD" opacity="0.7" />
+  </g>
+  
+  <!-- Abstract decorative elements -->
+  <circle cx="40" cy="40" r="15" fill="#6A5ACD" opacity="0.2" />
+  <circle cx="360" cy="260" r="20" fill="#4169E1" opacity="0.2" />
+</svg>
