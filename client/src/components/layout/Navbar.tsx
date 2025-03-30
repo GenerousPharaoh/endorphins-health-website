@@ -26,125 +26,131 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 bg-white shadow-lg transition-all ${isScrolled ? 'py-1' : 'py-2'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-primary/90 to-primary"></div>
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <div className="mr-2 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-primary text-lg font-black">E</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-primary text-lg font-extrabold tracking-tight">ENDORPHINS</span>
-                <span className="text-gray-600 text-xs font-medium tracking-wider">HEALTH & WELLNESS</span>
-              </div>
-            </Link>
-          </div>
+    <header className="fixed w-full top-0 z-50 transition-all">
+      <div className={`bg-black text-white ${isScrolled ? 'py-2' : 'py-4'}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center">
+                <div className="mr-3 h-10 w-10 bg-primary flex items-center justify-center transform rotate-12 skew-y-3">
+                  <span className="text-white text-xl font-black transform -rotate-12 -skew-y-3">E</span>
+                </div>
+                <div className="flex flex-col leading-none">
+                  <span className="text-white text-xl font-black tracking-tighter">ENDORPHINS</span>
+                  <span className="text-primary text-[10px] font-bold tracking-[0.3em] mt-0.5">WELLNESS CENTER</span>
+                </div>
+              </Link>
+            </div>
 
-          <nav className="hidden md:flex space-x-4">
-            <a href="#services" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
-              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
-              Services
-            </a>
-            <a href="#team" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
-              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
-              Team
-            </a>
-            <a href="#testimonials" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
-              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
-              Reviews
-            </a>
-            <a href="#contact" className="font-heading text-gray-600 hover:text-primary px-2 py-1 text-sm uppercase font-bold transition-all relative group tracking-wide">
-              <span className="absolute -left-3 top-1/2 transform -translate-y-1/2 w-0 h-0 bg-primary group-hover:w-2 group-hover:h-2 rounded-full transition-all"></span>
-              Contact
-            </a>
-          </nav>
-
-          <div className="hidden md:block">
-            <Button 
-              asChild
-              className="bg-primary hover:bg-primary/90 text-white font-bold px-5 py-1.5 rounded-md text-sm uppercase tracking-wide transition-all shadow-md"
-            >
-              <a href="#booking" className="flex items-center">
-                <span>Book</span>
-                <span className="ml-1 font-bold">→</span>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center">
+              <a href="#services" className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden">
+                <span className="relative z-10">SERVICES</span>
+                <span className="absolute bottom-0 left-0 w-full h-0 bg-primary group-hover:h-1 transition-all duration-300"></span>
               </a>
-            </Button>
-          </div>
+              <a href="#team" className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden">
+                <span className="relative z-10">TEAM</span>
+                <span className="absolute bottom-0 left-0 w-full h-0 bg-primary group-hover:h-1 transition-all duration-300"></span>
+              </a>
+              <a href="#testimonials" className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden">
+                <span className="relative z-10">REVIEWS</span>
+                <span className="absolute bottom-0 left-0 w-full h-0 bg-primary group-hover:h-1 transition-all duration-300"></span>
+              </a>
+              <a href="#contact" className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden">
+                <span className="relative z-10">CONTACT</span>
+                <span className="absolute bottom-0 left-0 w-full h-0 bg-primary group-hover:h-1 transition-all duration-300"></span>
+              </a>
+            </nav>
 
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={toggleMobileMenu} 
-              className="text-primary hover:bg-primary/10 p-2 rounded-full focus:outline-none transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? (
-                <X size={24} />
-              ) : (
-                <Menu size={24} />
-              )}
-            </button>
+            {/* Desktop Book Button */}
+            <div className="hidden md:block">
+              <Button 
+                asChild
+                className="bg-transparent border-2 border-primary hover:bg-primary text-white font-black text-xs px-6 py-2 uppercase tracking-[0.15em] transition-all duration-300"
+              >
+                <a href="#booking" className="flex items-center">
+                  <span>Book Now</span>
+                </a>
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={toggleMobileMenu} 
+                className="text-white hover:text-primary p-2 focus:outline-none transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X size={24} />
+                ) : (
+                  <Menu size={24} />
+                )}
+              </button>
+            </div>
           </div>
         </div>
+      </div>
 
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden bg-white pb-4 overflow-hidden"
-            >
-              <div className="flex flex-col space-y-1 pt-3">
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/95 text-white overflow-hidden border-t border-primary/30"
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col space-y-0 py-3">
                 <a 
                   href="#services" 
-                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
+                  className="border-b border-white/10 font-heading text-white hover:text-primary px-2 py-4 text-sm uppercase font-bold tracking-widest transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                  Services
+                  <div className="w-1 h-6 bg-primary mr-4"></div>
+                  SERVICES
                 </a>
                 <a 
                   href="#team" 
-                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
+                  className="border-b border-white/10 font-heading text-white hover:text-primary px-2 py-4 text-sm uppercase font-bold tracking-widest transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                  Team
+                  <div className="w-1 h-6 bg-primary mr-4"></div>
+                  TEAM
                 </a>
                 <a 
                   href="#testimonials" 
-                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
+                  className="border-b border-white/10 font-heading text-white hover:text-primary px-2 py-4 text-sm uppercase font-bold tracking-widest transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                  Reviews
+                  <div className="w-1 h-6 bg-primary mr-4"></div>
+                  REVIEWS
                 </a>
                 <a 
                   href="#contact" 
-                  className="font-heading text-gray-600 hover:text-primary px-4 py-2 text-sm uppercase font-bold tracking-wide transition-all flex items-center"
+                  className="border-b border-white/10 font-heading text-white hover:text-primary px-2 py-4 text-sm uppercase font-bold tracking-widest transition-all flex items-center"
                   onClick={closeMobileMenu}
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                  Contact
+                  <div className="w-1 h-6 bg-primary mr-4"></div>
+                  CONTACT
                 </a>
-                <div className="pt-3 pb-1">
+                <div className="pt-4 pb-2">
                   <a 
                     href="#booking" 
-                    className="bg-primary hover:bg-primary/90 text-white font-heading font-medium mx-4 py-2 rounded-md text-center transition-all flex items-center justify-center text-sm"
+                    className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-3 text-center transition-all flex items-center justify-center text-sm"
                     onClick={closeMobileMenu}
                   >
                     <span>BOOK NOW</span>
-                    <span className="ml-2 font-bold">→</span>
                   </a>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
