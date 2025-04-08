@@ -219,14 +219,19 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
+              className="relative"
             >
-              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="98" stroke="#ff4eab" strokeWidth="4" fill="none" />
-                <circle cx="100" cy="100" r="70" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-                <circle cx="100" cy="100" r="40" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-                <circle cx="100" cy="100" r="15" fill="#ff4eab" />
-                <path d="M130 60C138 80 120 100 100 105C80 110 60 100 50 80C40 60 60 40 80 35C100 30 122 40 130 60Z" fill="#ff4eab" />
+              <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="150" cy="150" r="140" stroke="#ff4eab" strokeWidth="4" fill="none" />
+                <circle cx="150" cy="150" r="100" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+                <circle cx="150" cy="150" r="60" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+                <circle cx="150" cy="150" r="25" fill="#ff4eab" />
+                <path d="M180 100C200 120 190 170 150 175C110 180 90 150 80 130C70 110 90 80 120 75C150 70 160 80 180 100Z" fill="#ff4eab" />
               </svg>
+              
+              <div className="absolute bottom-4 left-0 right-0 text-center text-white">
+                <span>Scroll Down</span>
+              </div>
             </motion.div>
           </div>
           
@@ -298,9 +303,9 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Scroll down indicator */}
+        {/* Scroll down indicator (desktop only) */}
         <motion.div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden sm:flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}
