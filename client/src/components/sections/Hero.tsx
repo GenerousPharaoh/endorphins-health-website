@@ -63,8 +63,8 @@ const Hero = () => {
         backgroundSize: "200% 200%"
       }}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Animated background elements - desktop only */}
+      <div className="absolute inset-0 overflow-hidden hidden lg:block">
         <motion.div
           className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
           animate={{ 
@@ -213,25 +213,20 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          {/* Mobile SVG - Simple Version */}
-          <div className="flex justify-center my-8 lg:hidden">
+          {/* Mobile Content */}
+          <div className="text-center mb-10 lg:hidden">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="relative"
+              className="mt-4"
             >
-              <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="150" cy="150" r="140" stroke="#ff4eab" strokeWidth="4" fill="none" />
-                <circle cx="150" cy="150" r="100" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-                <circle cx="150" cy="150" r="60" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-                <circle cx="150" cy="150" r="25" fill="#ff4eab" />
-                <path d="M180 100C200 120 190 170 150 175C110 180 90 150 80 130C70 110 90 80 120 75C150 70 160 80 180 100Z" fill="#ff4eab" />
-              </svg>
-              
-              <div className="absolute bottom-4 left-0 right-0 text-center text-white">
-                <span>Scroll Down</span>
-              </div>
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-5 rounded-md shadow-lg"
+              >
+                Book Appointment <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
             </motion.div>
           </div>
           
