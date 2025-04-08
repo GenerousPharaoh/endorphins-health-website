@@ -22,7 +22,7 @@ const Services = () => {
     <section id="services" className="py-20 lg:py-24 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-blue-500/10 text-blue-500 mb-3">Our Specialties</Badge>
+          <Badge className="bg-primary/10 text-primary mb-3">Our Specialties</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Comprehensive Care Services
           </h2>
@@ -42,18 +42,15 @@ const Services = () => {
                     onClick={() => setSelectedService(service.id)}
                     className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center ${
                       selectedService === service.id 
-                        ? "bg-blue-900/50 text-blue-400" 
+                        ? "bg-primary/20 text-primary" 
                         : "text-gray-300 hover:bg-gray-800"
                     }`}
                   >
-                    <div className="w-8 h-8 rounded-lg bg-gray-800 mr-3 flex items-center justify-center text-blue-500">
-                      {service.icon}
-                    </div>
                     <div>
                       <h3 className="font-medium">{service.title}</h3>
                     </div>
                     {selectedService === service.id && (
-                      <ChevronRight size={16} className="ml-auto text-blue-500" />
+                      <ChevronRight size={16} className="ml-auto text-primary" />
                     )}
                   </button>
                 ))}
@@ -86,7 +83,7 @@ const Services = () => {
                 <div className="mt-6 flex justify-end">
                   <a 
                     href="#booking" 
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     Book Now
                     <ChevronRight size={16} className="ml-2" />

@@ -2,7 +2,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: string; // We'll use this for SVG icons
   image: string;
   altText: string;
 }

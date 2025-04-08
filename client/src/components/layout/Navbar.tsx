@@ -42,22 +42,29 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/" className="flex items-center">
-                <div className="relative mr-3 h-10 w-3 bg-primary group overflow-hidden">
-                  <div className="absolute top-0 left-0 h-full w-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
-                <div className="flex flex-col leading-none ml-2">
-                  <motion.span 
-                    className="text-white text-base sm:text-xl font-black tracking-tight"
-                    whileHover={{ 
-                      scale: 1.02,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    ENDORPHINS
-                  </motion.span>
-                  <div className="flex items-center">
-                    <div className="w-8 h-0.5 bg-primary mr-2"></div>
-                    <span className="text-white/90 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
+                <div className="flex items-center">
+                  <div className="relative h-9 w-9 mr-3 bg-black border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group">
+                    <span className="text-white font-bold text-xs">E</span>
+                    <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="flex flex-col leading-none">
+                    <motion.div className="flex items-center">
+                      <motion.span 
+                        className="text-white text-base sm:text-xl font-black tracking-tight"
+                        whileHover={{ 
+                          scale: 1.02,
+                          transition: { duration: 0.3 }
+                        }}
+                      >
+                        ENDORPHINS
+                      </motion.span>
+                    </motion.div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-[2px] bg-primary"></div>
+                      <span className="text-white/90 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
+                    </div>
                   </div>
                 </div>
               </Link>
