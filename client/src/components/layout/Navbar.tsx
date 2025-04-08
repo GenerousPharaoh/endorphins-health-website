@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight, MapPin, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronRight, MapPin, Phone, Mail, Home as HomeIcon } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,24 +72,48 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-1">
-              {['SERVICES', 'TEAM', 'REVIEWS', 'CONTACT'].map((item, i) => (
-                <motion.a 
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden"
+              <Link href="/">
+                <motion.div 
+                  className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 + (i * 0.1) }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <span className="relative z-10">{item === 'REVIEWS' ? 'REVIEWS' : item}</span>
+                  <span className="relative z-10 flex items-center">
+                    <HomeIcon size={16} className="mr-1" />HOME
+                  </span>
                   <motion.span 
                     className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
                   />
-                </motion.a>
+                </motion.div>
+              </Link>
+              {[
+                { label: 'SERVICES', path: '/services' },
+                { label: 'TEAM', path: '/team' },
+                { label: 'BLOG', path: '/blog' },
+                { label: 'CONTACT', path: '/contact' }
+              ].map((item, i) => (
+                <Link key={item.label} href={item.path}>
+                  <motion.div 
+                    className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.1) }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <motion.span 
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                </Link>
               ))}
             </nav>
 
@@ -108,10 +132,10 @@ const Navbar = () => {
                   asChild
                   className="relative overflow-hidden bg-transparent border-2 border-primary text-white font-black text-xs px-6 py-2 uppercase tracking-[0.15em] group"
                 >
-                  <a href="#booking" className="flex items-center">
+                  <Link href="/contact" className="flex items-center">
                     <span className="relative z-10">Book Now</span>
                     <span className="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                  </a>
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -162,17 +186,15 @@ const Navbar = () => {
             
             <div className="container mx-auto px-6 py-20">
               <div className="flex flex-col space-y-1">
-                {['SERVICES', 'TEAM', 'REVIEWS', 'CONTACT'].map((item, i) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 + (i * 0.1) }}
-                    className="overflow-hidden border-b border-white/10"
-                  >
-                    <motion.a 
-                      href={`#${item.toLowerCase()}`}
-                      className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center"
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                  className="overflow-hidden border-b border-white/10"
+                >
+                  <Link href="/">
+                    <motion.div 
+                      className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer"
                       onClick={closeMobileMenu}
                       whileHover={{ x: 10 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -181,18 +203,59 @@ const Navbar = () => {
                         className="w-1 h-10 bg-primary mr-6"
                         initial={{ height: 0 }}
                         animate={{ height: 40 }}
-                        transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
                       />
-                      {item}
+                      <HomeIcon size={20} className="mr-2" />
+                      HOME
                       <motion.div
                         className="ml-auto"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 0.5, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.3 + (i * 0.1) }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
                       >
                         <ChevronRight size={20} className="text-primary/70" />
                       </motion.div>
-                    </motion.a>
+                    </motion.div>
+                  </Link>
+                </motion.div>
+                
+                {[
+                  { label: 'SERVICES', path: '/services' },
+                  { label: 'TEAM', path: '/team' },
+                  { label: 'BLOG', path: '/blog' },
+                  { label: 'CONTACT', path: '/contact' }
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.1) }}
+                    className="overflow-hidden border-b border-white/10"
+                  >
+                    <Link href={item.path}>
+                      <motion.div 
+                        className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer"
+                        onClick={closeMobileMenu}
+                        whileHover={{ x: 10 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <motion.div 
+                          className="w-1 h-10 bg-primary mr-6"
+                          initial={{ height: 0 }}
+                          animate={{ height: 40 }}
+                          transition={{ duration: 0.4, delay: 0.2 + ((i+1) * 0.1) }}
+                        />
+                        {item.label}
+                        <motion.div
+                          className="ml-auto"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 0.5, x: 0 }}
+                          transition={{ duration: 0.3, delay: 0.3 + ((i+1) * 0.1) }}
+                        >
+                          <ChevronRight size={20} className="text-primary/70" />
+                        </motion.div>
+                      </motion.div>
+                    </Link>
                   </motion.div>
                 ))}
                 
@@ -202,35 +265,36 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                 >
-                  <motion.a 
-                    href="#booking" 
-                    className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-5 text-center transition-all flex items-center justify-center text-lg rounded-sm overflow-hidden relative"
-                    onClick={closeMobileMenu}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
+                  <Link href="/contact">
                     <motion.div 
-                      className="absolute inset-0 bg-white/10"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '100%' }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    />
-                    <span className="relative z-10 flex items-center">
-                      BOOK APPOINTMENT
-                      <motion.span 
-                        className="ml-2"
-                        animate={{ 
-                          x: [0, 5, 0],
-                        }}
-                        transition={{ 
-                          repeat: Infinity, 
-                          duration: 1.5
-                        }}
-                      >
-                        <ChevronRight size={20} />
-                      </motion.span>
-                    </span>
-                  </motion.a>
+                      className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-5 text-center transition-all flex items-center justify-center text-lg rounded-sm overflow-hidden relative cursor-pointer"
+                      onClick={closeMobileMenu}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <motion.div 
+                        className="absolute inset-0 bg-white/10"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '100%' }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                      />
+                      <span className="relative z-10 flex items-center">
+                        BOOK APPOINTMENT
+                        <motion.span 
+                          className="ml-2"
+                          animate={{ 
+                            x: [0, 5, 0],
+                          }}
+                          transition={{ 
+                            repeat: Infinity, 
+                            duration: 1.5
+                          }}
+                        >
+                          <ChevronRight size={20} />
+                        </motion.span>
+                      </span>
+                    </motion.div>
+                  </Link>
                 </motion.div>
                 
                 {/* Quick Contact Info for Mobile */}
