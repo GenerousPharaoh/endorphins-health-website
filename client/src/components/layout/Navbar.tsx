@@ -42,25 +42,23 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/" className="flex items-center">
-                <div className="relative mr-2 sm:mr-3 h-8 w-8 sm:h-10 sm:w-10 bg-primary flex items-center justify-center transform rotate-12 skew-y-3 overflow-hidden group">
-                  <span className="text-white text-lg sm:text-xl font-black transform -rotate-12 -skew-y-3 z-10">E</span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="relative mr-3 h-10 w-3 bg-primary group overflow-hidden">
+                  <div className="absolute top-0 left-0 h-full w-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex flex-col leading-none">
+                <div className="flex flex-col leading-none ml-2">
                   <motion.span 
-                    className="text-white text-base sm:text-xl font-black tracking-tighter"
-                    initial={{ backgroundPosition: "0% 0%" }}
+                    className="text-white text-base sm:text-xl font-black tracking-tight"
                     whileHover={{ 
-                      backgroundSize: "200% 200%",
-                      color: "transparent",
-                      backgroundClip: "text",
-                      backgroundImage: "linear-gradient(90deg, white, #ff5ebc, white)",
-                      transition: { duration: 1, repeat: Infinity }
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
                     }}
                   >
                     ENDORPHINS
                   </motion.span>
-                  <span className="text-primary text-[8px] sm:text-[10px] font-bold tracking-[0.3em] mt-0.5">WELLNESS CENTER</span>
+                  <div className="flex items-center">
+                    <div className="w-8 h-0.5 bg-primary mr-2"></div>
+                    <span className="text-white/90 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
+                  </div>
                 </div>
               </Link>
             </motion.div>
