@@ -112,37 +112,41 @@ const Hero = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             variants={container}
             initial="hidden"
             animate={isVisible ? "show" : "hidden"}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left py-4 sm:py-8 md:py-0"
           >
             <motion.h1 
               variants={item}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 sm:mb-6"
             >
-              Revitalize Your{" "}
-              <span className="text-primary relative">
-                Health
-                <motion.span 
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-primary rounded-full" 
-                  initial={{ scaleX: 0, originX: 0 }} 
-                  animate={{ scaleX: 1 }} 
-                  transition={{ delay: 0.8, duration: 0.6 }}
-                />
-              </span>{" "}
-              and{" "}
-              <span className="text-primary relative">
-                Wellness
-                <motion.span 
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-primary rounded-full" 
-                  initial={{ scaleX: 0, originX: 0 }} 
-                  animate={{ scaleX: 1 }} 
-                  transition={{ delay: 1, duration: 0.6 }}
-                />
-              </span>
+              <div className="mb-1 md:mb-0 md:inline">Revitalize Your{" "}</div>
+              <div className="relative inline-block">
+                <span className="text-primary relative">
+                  Health
+                  <motion.span 
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-1 bg-primary rounded-full" 
+                    initial={{ scaleX: 0, originX: 0 }} 
+                    animate={{ scaleX: 1 }} 
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                  />
+                </span>
+              </div>{" "}
+              <div className="mt-1 md:mt-0 md:inline">and{" "}</div>
+              <div className="relative inline-block">
+                <span className="text-primary relative">
+                  Wellness
+                  <motion.span 
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-1 bg-primary rounded-full" 
+                    initial={{ scaleX: 0, originX: 0 }} 
+                    animate={{ scaleX: 1 }} 
+                    transition={{ delay: 1, duration: 0.6 }}
+                  />
+                </span>
+              </div>
             </motion.h1>
             
             <motion.p 
@@ -209,6 +213,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
+          {/* Desktop SVG */}
           <div className="relative hidden lg:block">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -274,11 +279,52 @@ const Hero = () => {
               </svg>
             </motion.div>
           </div>
+
+          {/* Mobile SVG - Simpler version for better performance */}
+          <motion.div 
+            className="block lg:hidden mt-10 mb-6 px-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <svg 
+              className="w-full h-auto mx-auto max-w-xs" 
+              viewBox="0 0 300 300" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="150" cy="150" r="140" stroke="#ff4eab" strokeWidth="3" fill="none" />
+              <circle cx="150" cy="150" r="100" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+              <path d="M180 90C190 110 170 145 140 155C110 165 90 155 80 135C70 115 90 80 120 70C150 60 170 70 180 90Z" fill="#ff4eab" />
+              <circle cx="150" cy="150" r="50" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+              <circle cx="150" cy="150" r="20" fill="#ff4eab" />
+              <circle cx="110" cy="110" r="10" fill="#ff4eab" />
+              <circle cx="190" cy="110" r="10" fill="#ff4eab" />
+              <circle cx="150" cy="200" r="10" fill="#ff4eab" />
+            </svg>
+            
+            <motion.div
+              className="w-full flex justify-center mt-6"
+              animate={{ 
+                y: [0, 5, 0],
+                scale: [1, 1.02, 1] 
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                repeatType: "mirror" 
+              }}
+            >
+              <div className="bg-gradient-to-r from-primary/30 via-primary to-primary/30 text-white font-medium text-sm py-2 px-6 rounded-full">
+                Personalized Treatment Plans
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
         
         {/* Scroll down indicator */}
         <motion.div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center hidden sm:flex"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}
@@ -289,6 +335,33 @@ const Hero = () => {
             transition={{ duration: 1.5, repeat: Infinity }}
           >
             <ChevronDown className="h-6 w-6 text-primary" />
+          </motion.div>
+        </motion.div>
+        
+        {/* Mobile scroll indicator - simplified */}
+        <motion.div 
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+        >
+          <motion.div
+            animate={{ 
+              y: [0, 8, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+            className="flex flex-col items-center"
+          >
+            <div className="h-10 w-6 border-2 border-primary/50 rounded-full flex items-start justify-center p-1">
+              <motion.div 
+                className="h-2 w-2 bg-primary rounded-full"
+                animate={{
+                  y: [0, 12, 0]
+                }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>

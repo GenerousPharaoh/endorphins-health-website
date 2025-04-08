@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight, MapPin, Phone, Mail } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className={`bg-black text-white ${isScrolled ? 'py-2' : 'py-4'} transition-all duration-300`}>
+      <div className={`bg-black text-white ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -42,13 +42,13 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/" className="flex items-center">
-                <div className="relative mr-3 h-10 w-10 bg-primary flex items-center justify-center transform rotate-12 skew-y-3 overflow-hidden group">
-                  <span className="text-white text-xl font-black transform -rotate-12 -skew-y-3 z-10">E</span>
+                <div className="relative mr-2 sm:mr-3 h-8 w-8 sm:h-10 sm:w-10 bg-primary flex items-center justify-center transform rotate-12 skew-y-3 overflow-hidden group">
+                  <span className="text-white text-lg sm:text-xl font-black transform -rotate-12 -skew-y-3 z-10">E</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
                 <div className="flex flex-col leading-none">
                   <motion.span 
-                    className="text-white text-xl font-black tracking-tighter"
+                    className="text-white text-base sm:text-xl font-black tracking-tighter"
                     initial={{ backgroundPosition: "0% 0%" }}
                     whileHover={{ 
                       backgroundSize: "200% 200%",
@@ -60,7 +60,7 @@ const Navbar = () => {
                   >
                     ENDORPHINS
                   </motion.span>
-                  <span className="text-primary text-[10px] font-bold tracking-[0.3em] mt-0.5">WELLNESS CENTER</span>
+                  <span className="text-primary text-[8px] sm:text-[10px] font-bold tracking-[0.3em] mt-0.5">WELLNESS CENTER</span>
                 </div>
               </Link>
             </motion.div>
@@ -115,9 +115,15 @@ const Navbar = () => {
             <div className="md:hidden flex items-center">
               <button 
                 onClick={toggleMobileMenu} 
-                className="text-white hover:text-primary p-2 focus:outline-none transition-colors"
+                className="relative text-white hover:text-primary p-2 focus:outline-none transition-colors z-50"
                 aria-label="Toggle mobile menu"
               >
+                <motion.span
+                  className="absolute inset-0 bg-primary/10 rounded-full"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: isMobileMenuOpen ? 1 : 0 }}
+                  transition={{ duration: 0.2 }}
+                />
                 {isMobileMenuOpen ? (
                   <X size={24} />
                 ) : (
@@ -129,48 +135,74 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Screen Overlay Approach */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 text-white overflow-hidden border-t border-primary/30 backdrop-blur-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 md:hidden bg-black/95 backdrop-blur-md z-40 overflow-y-auto"
+            style={{ 
+              background: "linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(20,20,20,0.98) 100%)"
+            }}
           >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col space-y-0 py-3">
+            <motion.div 
+              className="absolute top-0 left-0 w-1 h-full bg-primary"
+              initial={{ scaleY: 0, originY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            />
+            
+            <div className="container mx-auto px-6 py-20">
+              <div className="flex flex-col space-y-1">
                 {['SERVICES', 'TEAM', 'REVIEWS', 'CONTACT'].map((item, i) => (
-                  <motion.a 
+                  <motion.div
                     key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="border-b border-white/10 font-heading text-white hover:text-primary px-2 py-4 text-sm uppercase font-bold tracking-widest transition-all flex items-center"
-                    onClick={closeMobileMenu}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + (i * 0.1) }}
-                    whileHover={{ x: 5 }}
+                    className="overflow-hidden border-b border-white/10"
                   >
-                    <motion.div 
-                      className="w-1 h-6 bg-primary mr-4"
-                      initial={{ height: 0 }}
-                      animate={{ height: 24 }}
-                      transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                    />
-                    {item}
-                  </motion.a>
+                    <motion.a 
+                      href={`#${item.toLowerCase()}`}
+                      className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center"
+                      onClick={closeMobileMenu}
+                      whileHover={{ x: 10 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <motion.div 
+                        className="w-1 h-10 bg-primary mr-6"
+                        initial={{ height: 0 }}
+                        animate={{ height: 40 }}
+                        transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                      />
+                      {item}
+                      <motion.div
+                        className="ml-auto"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 0.5, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.3 + (i * 0.1) }}
+                      >
+                        <ChevronRight size={20} className="text-primary/70" />
+                      </motion.div>
+                    </motion.a>
+                  </motion.div>
                 ))}
                 
-                <div className="pt-4 pb-2">
+                <motion.div 
+                  className="pt-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 }}
+                >
                   <motion.a 
                     href="#booking" 
-                    className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-3 text-center transition-all flex items-center justify-center text-sm overflow-hidden relative"
+                    className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-5 text-center transition-all flex items-center justify-center text-lg rounded-sm overflow-hidden relative"
                     onClick={closeMobileMenu}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
                     whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <motion.div 
                       className="absolute inset-0 bg-white/10"
@@ -179,18 +211,45 @@ const Navbar = () => {
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                     />
                     <span className="relative z-10 flex items-center">
-                      BOOK NOW
+                      BOOK APPOINTMENT
                       <motion.span 
                         className="ml-2"
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 5 }}
-                        transition={{ repeat: Infinity, repeatType: "mirror", duration: 0.6 }}
+                        animate={{ 
+                          x: [0, 5, 0],
+                        }}
+                        transition={{ 
+                          repeat: Infinity, 
+                          duration: 1.5
+                        }}
                       >
-                        →
+                        <ChevronRight size={20} />
                       </motion.span>
                     </span>
                   </motion.a>
-                </div>
+                </motion.div>
+                
+                {/* Quick Contact Info for Mobile */}
+                <motion.div 
+                  className="mt-12 border-t border-white/10 pt-8 text-white/70"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                >
+                  <div className="space-y-4">
+                    <p className="flex items-center text-sm">
+                      <MapPin size={16} className="mr-3 text-primary" />
+                      4631 Palladium Way (Unit 6), Burlington, Ontario
+                    </p>
+                    <p className="flex items-center text-sm">
+                      <Phone size={16} className="mr-3 text-primary" />
+                      (905) 335-5300
+                    </p>
+                    <p className="flex items-center text-sm">
+                      <Mail size={16} className="mr-3 text-primary" />
+                      info@endorphins.ca
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
