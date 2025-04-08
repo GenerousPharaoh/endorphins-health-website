@@ -1,231 +1,102 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { services } from "@/data/services";
+import { Badge } from "@/components/ui/badge";
 import { ChevronRight } from "lucide-react";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0].id);
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
+  
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
     }
-  }, [controls, isInView]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
   };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-  };
-
+  
   const serviceDetail = services.find((s) => s.id === selectedService);
 
   return (
-    <section 
-      id="services" 
-      className="relative py-24 bg-gradient-to-b from-black to-[#101010] overflow-hidden"
-      ref={ref}
-    >
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute top-40 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.15, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-        />
-        <motion.div 
-          className="absolute -bottom-40 -left-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl"
-          animate={{ 
-            scale: [1, 1.5, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.div variants={itemVariants}>
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Our Specialties</Badge>
-          </motion.div>
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-          >
-            Comprehensive Care <span className="text-primary">Services</span>
-          </motion.h2>
-          <motion.p 
-            variants={itemVariants}
-            className="max-w-2xl mx-auto text-gray-400"
-          >
+    <section id="services" className="py-20 lg:py-24 bg-black">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <Badge className="bg-blue-500/10 text-blue-500 mb-3">Our Specialties</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Comprehensive Care Services
+          </h2>
+          <p className="max-w-2xl mx-auto text-gray-400">
             Our multidisciplinary team offers personalized care to help you achieve optimal health and wellness through a variety of specialized treatments.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
-          <motion.div 
-            className="lg:col-span-2 bg-[#0a0a0a] rounded-xl p-5 overflow-hidden"
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-          >
-            <div className="space-y-3">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+        <div className="grid md:grid-cols-12 gap-8">
+          {/* Service List */}
+          <div className="md:col-span-5 lg:col-span-4">
+            <div className="bg-gray-900 rounded-xl p-4 shadow-lg">
+              <div className="space-y-2">
+                {services.map((service) => (
                   <button
+                    key={service.id}
                     onClick={() => setSelectedService(service.id)}
-                    className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-start ${
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center ${
                       selectedService === service.id 
-                        ? "bg-primary/10 text-primary" 
-                        : "bg-[#151515] text-gray-300 hover:bg-[#1a1a1a]"
+                        ? "bg-blue-900/50 text-blue-400" 
+                        : "text-gray-300 hover:bg-gray-800"
                     }`}
                   >
-                    <div className="flex-1">
-                      <div className="flex items-center">
-                        <span 
-                          className={`inline-block w-2 h-2 rounded-full mr-3 ${
-                            selectedService === service.id ? "bg-primary" : "bg-gray-500"
-                          }`}
-                        ></span>
-                        <h3 className="font-bold text-lg">{service.title}</h3>
-                      </div>
-                      <p className={`mt-2 text-sm ${
-                        selectedService === service.id ? "text-gray-200" : "text-gray-400"
-                      }`}>
-                        {service.description.substring(0, 60)}...
-                      </p>
+                    <div className="w-8 h-8 rounded-lg bg-gray-800 mr-3 flex items-center justify-center text-blue-500">
+                      {service.icon}
                     </div>
-                    <div className={`mt-1 transform transition-transform duration-300 ${
-                      selectedService === service.id ? "rotate-90" : ""
-                    }`}>
-                      <ChevronRight size={16} />
+                    <div>
+                      <h3 className="font-medium">{service.title}</h3>
                     </div>
+                    {selectedService === service.id && (
+                      <ChevronRight size={16} className="ml-auto text-blue-500" />
+                    )}
                   </button>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="lg:col-span-3 relative overflow-hidden"
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-          >
+          {/* Service Detail */}
+          <div className="md:col-span-7 lg:col-span-8">
             {serviceDetail && (
               <motion.div 
-                className="h-full"
                 key={selectedService}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="bg-gray-900 p-6 rounded-xl shadow-lg h-full"
               >
-                <div className="bg-gradient-to-r from-black to-[#101010] p-6 rounded-xl h-full flex flex-col">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary mr-4">
-                      <span className="text-xl font-bold">{serviceDetail.icon}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">{serviceDetail.title}</h3>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{serviceDetail.description}</p>
-                  
-                  <div className="relative flex-grow mt-4 overflow-hidden rounded-lg">
-                    <div className="aspect-w-16 aspect-h-9 relative overflow-hidden rounded-lg">
-                      <motion.div
-                        className="absolute inset-0 bg-cover bg-center rounded-lg transform transition-transform duration-5000"
-                        style={{ backgroundImage: `url(${serviceDetail.image})` }}
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 1.5 }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.2, duration: 0.5 }}
-                        >
-                          <Badge className="bg-primary/80 hover:bg-primary text-white mb-3">
-                            {serviceDetail.title}
-                          </Badge>
-                          <h4 className="text-xl font-bold text-white mb-2">
-                            Personalized Treatment Plans
-                          </h4>
-                          <p className="text-white/80 text-sm">
-                            Our expert therapists create custom plans tailored to your unique needs and goals.
-                          </p>
-                          <motion.button
-                            className="mt-4 flex items-center text-primary hover:text-white font-medium text-sm group"
-                            whileHover={{ x: 5 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          >
-                            <span>Learn more</span>
-                            <span className="ml-2 group-hover:ml-3 transition-all duration-300">→</span>
-                          </motion.button>
-                        </motion.div>
-                      </div>
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{serviceDetail.title}</h3>
+                
+                <p className="text-gray-300 mb-6">{serviceDetail.description}</p>
+                
+                <div className="mt-6 overflow-hidden rounded-lg">
+                  <img 
+                    src={serviceDetail.image} 
+                    alt={serviceDetail.altText}
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
+                </div>
+                
+                <div className="mt-6 flex justify-end">
+                  <a 
+                    href="#booking" 
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Book Now
+                    <ChevronRight size={16} className="ml-2" />
+                  </a>
                 </div>
               </motion.div>
             )}
-          </motion.div>
+          </div>
         </div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="mt-16 text-center"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="inline-block"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <a 
-              href="#booking" 
-              className="inline-flex items-center text-primary hover:text-white text-lg font-semibold transition-colors duration-300"
-            >
-              Book a consultation session
-              <span className="ml-2 group-hover:ml-3 transition-all duration-300">→</span>
-            </a>
-          </motion.div>
-        </motion.div>
       </div>
-
-      {/* Diagonal Divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#0a0a0a] transform -skew-y-2 translate-y-8"></div>
     </section>
   );
 };
