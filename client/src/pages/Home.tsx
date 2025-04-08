@@ -6,6 +6,7 @@ import Services from "@/components/sections/Services";
 import Team from "@/components/sections/Team";
 import Testimonials from "@/components/sections/Testimonials";
 import Booking from "@/components/sections/Booking";
+import Blog from "@/components/sections/Blog";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         <Services />
         <Team />
         <Testimonials />
+        <Blog />
         <Booking />
       </main>
       <Footer />
