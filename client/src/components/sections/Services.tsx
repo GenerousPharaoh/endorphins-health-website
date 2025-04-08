@@ -84,29 +84,9 @@ const Services = () => {
           </motion.p>
         </motion.div>
 
-        {/* Mobile tabs for service selection */}
-        <div className="flex lg:hidden overflow-x-auto pb-4 mb-6 -mx-4 px-4 scrollbar-hide">
-          <div className="flex space-x-2 min-w-max">
-            {services.map((service) => (
-              <motion.button
-                key={service.id}
-                onClick={() => setSelectedService(service.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
-                  selectedService === service.id 
-                    ? "bg-primary text-white shadow-lg shadow-primary/20" 
-                    : "bg-[#151515] text-gray-300 hover:bg-[#1a1a1a]"
-                }`}
-                whileTap={{ scale: 0.95 }}
-              >
-                {service.title}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-
         <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
           <motion.div 
-            className="hidden lg:block lg:col-span-2 bg-[#0a0a0a] rounded-xl p-5 overflow-hidden"
+            className="lg:col-span-2 bg-[#0a0a0a] rounded-xl p-5 overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate={controls}
@@ -168,49 +148,48 @@ const Services = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-gradient-to-r from-black to-[#101010] p-4 sm:p-6 rounded-xl h-full flex flex-col">
-                  <div className="flex items-center mb-4 sm:mb-6">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary mr-3 sm:mr-4 flex-shrink-0">
-                      <span className="text-lg sm:text-xl font-bold">{serviceDetail.icon}</span>
+                <div className="bg-gradient-to-r from-black to-[#101010] p-6 rounded-xl h-full flex flex-col">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary mr-4">
+                      <span className="text-xl font-bold">{serviceDetail.icon}</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">{serviceDetail.title}</h3>
+                    <h3 className="text-2xl font-bold text-white">{serviceDetail.title}</h3>
                   </div>
                   
-                  <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">{serviceDetail.description}</p>
+                  <p className="text-gray-300 mb-6">{serviceDetail.description}</p>
                   
-                  <div className="relative flex-grow mt-2 sm:mt-4 overflow-hidden rounded-lg">
-                    <div className="aspect-w-16 aspect-h-12 sm:aspect-h-9 relative overflow-hidden rounded-lg">
+                  <div className="relative flex-grow mt-4 overflow-hidden rounded-lg">
+                    <div className="aspect-w-16 aspect-h-9 relative overflow-hidden rounded-lg">
                       <motion.div
-                        className="absolute inset-0 bg-cover bg-center rounded-lg transform transition-transform"
+                        className="absolute inset-0 bg-cover bg-center rounded-lg transform transition-transform duration-5000"
                         style={{ backgroundImage: `url(${serviceDetail.image})` }}
                         initial={{ scale: 1 }}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 1.5 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
                         <motion.div
                           initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ delay: 0.2, duration: 0.5 }}
-                          className="space-y-1 sm:space-y-2"
                         >
-                          <Badge className="bg-primary/80 hover:bg-primary text-white mb-1 sm:mb-3 text-xs sm:text-sm">
+                          <Badge className="bg-primary/80 hover:bg-primary text-white mb-3">
                             {serviceDetail.title}
                           </Badge>
-                          <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                          <h4 className="text-xl font-bold text-white mb-2">
                             Personalized Treatment Plans
                           </h4>
-                          <p className="text-white/80 text-xs sm:text-sm max-w-md">
+                          <p className="text-white/80 text-sm">
                             Our expert therapists create custom plans tailored to your unique needs and goals.
                           </p>
                           <motion.button
-                            className="mt-2 sm:mt-4 flex items-center text-primary hover:text-white font-medium text-xs sm:text-sm group"
+                            className="mt-4 flex items-center text-primary hover:text-white font-medium text-sm group"
                             whileHover={{ x: 5 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
                           >
                             <span>Learn more</span>
-                            <span className="ml-1 sm:ml-2 group-hover:ml-2 sm:group-hover:ml-3 transition-all duration-300">→</span>
+                            <span className="ml-2 group-hover:ml-3 transition-all duration-300">→</span>
                           </motion.button>
                         </motion.div>
                       </div>

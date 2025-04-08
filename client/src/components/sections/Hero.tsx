@@ -213,6 +213,23 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
+          {/* Mobile SVG - Simple Version */}
+          <div className="flex justify-center my-8 lg:hidden">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="98" stroke="#ff4eab" strokeWidth="4" fill="none" />
+                <circle cx="100" cy="100" r="70" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+                <circle cx="100" cy="100" r="40" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
+                <circle cx="100" cy="100" r="15" fill="#ff4eab" />
+                <path d="M130 60C138 80 120 100 100 105C80 110 60 100 50 80C40 60 60 40 80 35C100 30 122 40 130 60Z" fill="#ff4eab" />
+              </svg>
+            </motion.div>
+          </div>
+          
           {/* Desktop SVG */}
           <div className="relative hidden lg:block">
             <motion.div
@@ -279,52 +296,11 @@ const Hero = () => {
               </svg>
             </motion.div>
           </div>
-
-          {/* Mobile SVG - Simpler version for better performance */}
-          <motion.div 
-            className="block lg:hidden mt-10 mb-6 px-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <svg 
-              className="w-full h-auto mx-auto max-w-xs" 
-              viewBox="0 0 300 300" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="150" cy="150" r="140" stroke="#ff4eab" strokeWidth="3" fill="none" />
-              <circle cx="150" cy="150" r="100" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-              <path d="M180 90C190 110 170 145 140 155C110 165 90 155 80 135C70 115 90 80 120 70C150 60 170 70 180 90Z" fill="#ff4eab" />
-              <circle cx="150" cy="150" r="50" fill="#161616" stroke="#ff4eab" strokeWidth="2" />
-              <circle cx="150" cy="150" r="20" fill="#ff4eab" />
-              <circle cx="110" cy="110" r="10" fill="#ff4eab" />
-              <circle cx="190" cy="110" r="10" fill="#ff4eab" />
-              <circle cx="150" cy="200" r="10" fill="#ff4eab" />
-            </svg>
-            
-            <motion.div
-              className="w-full flex justify-center mt-6"
-              animate={{ 
-                y: [0, 5, 0],
-                scale: [1, 1.02, 1] 
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity,
-                repeatType: "mirror" 
-              }}
-            >
-              <div className="bg-gradient-to-r from-primary/30 via-primary to-primary/30 text-white font-medium text-sm py-2 px-6 rounded-full">
-                Personalized Treatment Plans
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
         
         {/* Scroll down indicator */}
         <motion.div 
-          className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center hidden sm:flex"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}
@@ -335,33 +311,6 @@ const Hero = () => {
             transition={{ duration: 1.5, repeat: Infinity }}
           >
             <ChevronDown className="h-6 w-6 text-primary" />
-          </motion.div>
-        </motion.div>
-        
-        {/* Mobile scroll indicator - simplified */}
-        <motion.div 
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          <motion.div
-            animate={{ 
-              y: [0, 8, 0],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ duration: 1.2, repeat: Infinity }}
-            className="flex flex-col items-center"
-          >
-            <div className="h-10 w-6 border-2 border-primary/50 rounded-full flex items-start justify-center p-1">
-              <motion.div 
-                className="h-2 w-2 bg-primary rounded-full"
-                animate={{
-                  y: [0, 12, 0]
-                }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-            </div>
           </motion.div>
         </motion.div>
       </div>
