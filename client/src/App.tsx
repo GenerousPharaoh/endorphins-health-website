@@ -6,19 +6,23 @@ import TeamPage from "./pages/Team";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
 import Layout from "./components/layout/Layout";
+import { PageLoadTransition } from "./components/ui/page-load-transition";
 
 function App() {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/services" component={ServicePage} />
-        <Route path="/team" component={TeamPage} />
-        <Route path="/blog" component={BlogPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <>
+      <PageLoadTransition />
+      <Layout>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/services" component={ServicePage} />
+          <Route path="/team" component={TeamPage} />
+          <Route path="/blog" component={BlogPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </>
   );
 }
 

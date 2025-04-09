@@ -4,9 +4,17 @@ import { Button } from "../../components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, MapPin, Phone, Mail, Home as HomeIcon } from "lucide-react";
 
+// Helper function to check if a link is active
+const isActiveLink = (currentPath: string, linkPath: string): boolean => {
+  if (linkPath === "/" && currentPath === "/") return true;
+  if (linkPath !== "/" && currentPath.startsWith(linkPath)) return true;
+  return false;
+};
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +82,7 @@ const Navbar = () => {
             <nav className="hidden md:flex items-center space-x-1">
               <Link href="/">
                 <motion.div 
-                  className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer"
+                  className={`group mx-1 px-3 py-5 ${isActiveLink(location, '/') ? 'text-white' : 'text-white/80'} hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -85,7 +93,8 @@ const Navbar = () => {
                   </span>
                   <motion.span 
                     className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left"
-                    initial={{ scaleX: 0 }}
+                    initial={{ scaleX: isActiveLink(location, '/') ? 1 : 0 }}
+                    animate={{ scaleX: isActiveLink(location, '/') ? 1 : 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
                   />
@@ -99,7 +108,7 @@ const Navbar = () => {
               ].map((item, i) => (
                 <Link key={item.label} href={item.path}>
                   <motion.div 
-                    className="group mx-1 px-3 py-5 text-white/80 hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer"
+                    className={`group mx-1 px-3 py-5 ${isActiveLink(location, item.path) ? 'text-white' : 'text-white/80'} hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.1) }}
@@ -108,7 +117,8 @@ const Navbar = () => {
                     <span className="relative z-10">{item.label}</span>
                     <motion.span 
                       className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left"
-                      initial={{ scaleX: 0 }}
+                      initial={{ scaleX: isActiveLink(location, item.path) ? 1 : 0 }}
+                      animate={{ scaleX: isActiveLink(location, item.path) ? 1 : 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.3 }}
                     />
@@ -194,7 +204,7 @@ const Navbar = () => {
                 >
                   <Link href="/">
                     <motion.div 
-                      className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer"
+                      className={`font-heading ${isActiveLink(location, '/') ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                       onClick={closeMobileMenu}
                       whileHover={{ x: 10 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -234,7 +244,7 @@ const Navbar = () => {
                   >
                     <Link href={item.path}>
                       <motion.div 
-                        className="font-heading text-white hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer"
+                        className={`font-heading ${isActiveLink(location, item.path) ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                         onClick={closeMobileMenu}
                         whileHover={{ x: 10 }}
                         transition={{ type: "spring", stiffness: 300 }}
