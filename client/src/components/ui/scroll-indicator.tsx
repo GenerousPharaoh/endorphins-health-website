@@ -22,12 +22,12 @@ export function ScrollIndicator() {
 
   return (
     <motion.div 
-      className="fixed top-0 left-0 right-0 h-0.5 bg-primary/50 z-[100] origin-left"
+      className="fixed top-0 left-0 right-0 h-1 sm:h-1.5 bg-primary/60 z-[100] origin-left"
       style={{ 
         scaleX,
-        opacity: isVisible ? 0.7 : 0 
+        opacity: isVisible ? 0.8 : 0 
       }}
-      transition={{ opacity: { duration: 0.3 } }}
+      transition={{ opacity: { duration: 0.2 } }}
     />
   );
 }

@@ -19,28 +19,47 @@ const Services = () => {
   const serviceDetail = services.find((s) => s.id === selectedService);
 
   return (
-    <section id="services" className="py-20 lg:py-24 bg-black">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <Badge className="bg-primary/10 text-primary mb-3">Our Specialties</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Comprehensive Care Services
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-400">
+          <p className="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base">
             Our multidisciplinary team offers personalized care to help you achieve optimal health and wellness through a variety of specialized treatments.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-12 gap-8">
-          {/* Service List */}
-          <div className="md:col-span-5 lg:col-span-4">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8">
+          {/* Service List for Mobile - Horizontal Scrolling Tabs */}
+          <div className="md:hidden w-full overflow-x-auto pb-4">
+            <div className="flex space-x-2 min-w-max px-1">
+              {services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => setSelectedService(service.id)}
+                  className={`px-4 py-3 rounded-lg transition-all duration-150 whitespace-nowrap flex-shrink-0 ${
+                    selectedService === service.id 
+                      ? "bg-primary/20 text-primary" 
+                      : "bg-gray-900 text-gray-300 hover:bg-gray-800"
+                  }`}
+                >
+                  <span className="font-medium text-sm">{service.title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Service List for Desktop */}
+          <div className="hidden md:block md:col-span-5 lg:col-span-4">
             <div className="bg-gray-900 rounded-xl p-4 shadow-lg">
               <div className="space-y-2">
                 {services.map((service) => (
                   <button
                     key={service.id}
                     onClick={() => setSelectedService(service.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center ${
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-150 flex items-center ${
                       selectedService === service.id 
                         ? "bg-primary/20 text-primary" 
                         : "text-gray-300 hover:bg-gray-800"
@@ -59,20 +78,20 @@ const Services = () => {
           </div>
 
           {/* Service Detail */}
-          <div className="md:col-span-7 lg:col-span-8">
+          <div className="col-span-12 md:col-span-7 lg:col-span-8">
             {serviceDetail && (
               <motion.div 
                 key={selectedService}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="bg-gray-900 p-6 rounded-xl shadow-lg h-full"
+                transition={{ duration: 0.2 }}
+                className="bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg h-full"
               >
-                <h3 className="text-2xl font-bold text-white mb-4">{serviceDetail.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">{serviceDetail.title}</h3>
                 
-                <p className="text-gray-300 mb-6">{serviceDetail.description}</p>
+                <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6">{serviceDetail.description}</p>
                 
-                <div className="mt-6 overflow-hidden rounded-lg">
+                <div className="overflow-hidden rounded-lg">
                   <img 
                     src={serviceDetail.image} 
                     alt={serviceDetail.altText}
@@ -80,14 +99,23 @@ const Services = () => {
                   />
                 </div>
                 
-                <div className="mt-6 flex justify-end">
-                  <a 
+                <div className="mt-4 sm:mt-6 flex justify-end">
+                  <motion.a 
                     href="#booking" 
                     className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                    whileHover={{ x: 3 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.1 }}
                   >
                     Book Now
-                    <ChevronRight size={16} className="ml-2" />
-                  </a>
+                    <motion.span
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                      className="ml-1 sm:ml-2"
+                    >
+                      <ChevronRight size={14} className="sm:size-4" />
+                    </motion.span>
+                  </motion.a>
                 </div>
               </motion.div>
             )}
