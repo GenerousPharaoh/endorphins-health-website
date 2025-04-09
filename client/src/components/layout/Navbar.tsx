@@ -40,7 +40,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className={`bg-black text-white ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
+      <div className={`bg-white text-gray-800 shadow-sm ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -51,8 +51,8 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
-                  <div className="relative h-9 w-9 mr-3 bg-black border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group">
-                    <span className="text-white font-bold text-xs">E</span>
+                  <div className="relative h-9 w-9 mr-3 bg-white border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
+                    <span className="text-gray-800 font-bold text-xs">E</span>
                     <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
                     <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
                     <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   <div className="flex flex-col leading-none">
                     <motion.div className="flex items-center">
                       <motion.span 
-                        className="text-white text-base sm:text-xl font-black tracking-tight"
+                        className="text-gray-800 text-base sm:text-xl font-black tracking-tight"
                         whileHover={{ 
                           scale: 1.02,
                           transition: { duration: 0.3 }
@@ -71,7 +71,7 @@ const Navbar = () => {
                     </motion.div>
                     <div className="flex items-center gap-2">
                       <div className="w-5 h-[2px] bg-primary"></div>
-                      <span className="text-white/90 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
+                      <span className="text-gray-600 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <nav className="hidden md:flex items-center space-x-1">
               <Link href="/">
                 <motion.div 
-                  className={`group mx-1 px-3 py-5 ${isActiveLink(location, '/') ? 'text-white' : 'text-white/80'} hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
+                  className={`group mx-1 px-3 py-5 ${isActiveLink(location, '/') ? 'text-primary' : 'text-gray-700'} hover:text-primary uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -108,7 +108,7 @@ const Navbar = () => {
               ].map((item, i) => (
                 <Link key={item.label} href={item.path}>
                   <motion.div 
-                    className={`group mx-1 px-3 py-5 ${isActiveLink(location, item.path) ? 'text-white' : 'text-white/80'} hover:text-white uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
+                    className={`group mx-1 px-3 py-5 ${isActiveLink(location, item.path) ? 'text-primary' : 'text-gray-700'} hover:text-primary uppercase text-sm font-bold tracking-widest transition-all duration-300 relative overflow-hidden cursor-pointer`}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.1) }}
@@ -140,10 +140,10 @@ const Navbar = () => {
               >
                 <Button 
                   asChild
-                  className="relative overflow-hidden bg-transparent border-2 border-primary text-white font-black text-xs px-6 py-2 uppercase tracking-[0.15em] group"
+                  className="relative overflow-hidden bg-transparent border-2 border-primary text-gray-800 font-black text-xs px-6 py-2 uppercase tracking-[0.15em] group shadow-sm"
                 >
                   <Link href="/contact" className="flex items-center">
-                    <span className="relative z-10">Book Now</span>
+                    <span className="relative z-10 group-hover:text-white transition-colors duration-300">Book Now</span>
                     <span className="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                   </Link>
                 </Button>
@@ -154,7 +154,7 @@ const Navbar = () => {
             <div className="md:hidden flex items-center">
               <button 
                 onClick={toggleMobileMenu} 
-                className="relative text-white hover:text-primary p-2 focus:outline-none transition-colors z-50"
+                className="relative text-gray-700 hover:text-primary p-2 focus:outline-none transition-colors z-50"
                 aria-label="Toggle mobile menu"
               >
                 <motion.span
@@ -200,9 +200,9 @@ const Navbar = () => {
             animate={{ opacity: 0.98 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 md:hidden bg-black/95 backdrop-blur-md z-40 overflow-y-auto"
+            className="fixed inset-0 md:hidden bg-white/95 backdrop-blur-md z-40 overflow-y-auto shadow-lg"
             style={{ 
-              background: "linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.95) 100%)"
+              background: "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(249,245,240,0.98) 100%)"
             }}
           >
             <motion.div 
@@ -218,11 +218,11 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.2, delay: 0.05 }}
-                  className="overflow-hidden border-b border-white/10"
+                  className="overflow-hidden border-b border-gray-200"
                 >
                   <Link href="/">
                     <motion.div 
-                      className={`font-heading ${isActiveLink(location, '/') ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
+                      className={`font-heading ${isActiveLink(location, '/') ? 'text-primary' : 'text-gray-700'} hover:text-primary px-2 py-5 text-xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                       onClick={closeMobileMenu}
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -258,11 +258,11 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: 0.05 + ((i+1) * 0.05) }}
-                    className="overflow-hidden border-b border-white/10"
+                    className="overflow-hidden border-b border-gray-200"
                   >
                     <Link href={item.path}>
                       <motion.div 
-                        className={`font-heading ${isActiveLink(location, item.path) ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
+                        className={`font-heading ${isActiveLink(location, item.path) ? 'text-primary' : 'text-gray-700'} hover:text-primary px-2 py-5 text-xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                         onClick={closeMobileMenu}
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
@@ -327,9 +327,9 @@ const Navbar = () => {
                 
                 {/* Quick Contact Info for Mobile */}
                 <motion.div 
-                  className="mt-12 border-t border-white/10 pt-8 text-white/70"
+                  className="mt-12 border-t border-gray-200 pt-8 text-gray-600"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.8 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4 }}
                 >
                   <div className="space-y-4">
