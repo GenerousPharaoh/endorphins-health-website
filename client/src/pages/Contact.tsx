@@ -13,10 +13,10 @@ const ContactPage = () => {
 
   return (
     <div>
-      <div className="pt-24 pb-8 bg-black">
+      <div className="pt-24 pb-8 bg-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-white text-center"
+            className="text-4xl md:text-5xl font-bold text-gray-800 text-center"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -24,7 +24,7 @@ const ContactPage = () => {
             Contact Us
           </motion.h1>
           <motion.p 
-            className="mt-4 text-center text-gray-400 max-w-2xl mx-auto"
+            className="mt-4 text-center text-gray-600 max-w-2xl mx-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -35,59 +35,59 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Information */}
-      <section className="py-12 bg-gray-950">
+      <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div 
-              className="bg-gray-900 p-8 rounded-xl shadow-lg"
+              className="bg-white p-8 rounded-xl shadow-sm border border-gray-200"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Badge className="bg-primary/10 text-primary mb-4">Contact Information</Badge>
-              <h2 className="text-2xl font-bold text-white mb-6">Get In Touch</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Location</h3>
-                    <p className="text-gray-400">4631 Palladium Way (Unit 6)</p>
-                    <p className="text-gray-400">Burlington, Ontario</p>
+                    <h3 className="text-gray-800 font-medium mb-1">Location</h3>
+                    <p className="text-gray-600">4631 Palladium Way (Unit 6)</p>
+                    <p className="text-gray-600">Burlington, Ontario</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
                     <Phone className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Phone</h3>
-                    <p className="text-gray-400">(905) 335-5300</p>
+                    <h3 className="text-gray-800 font-medium mb-1">Phone</h3>
+                    <p className="text-gray-600">(905) 335-5300</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
                     <Mail className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Email</h3>
-                    <p className="text-gray-400">info@endorphins.ca</p>
+                    <h3 className="text-gray-800 font-medium mb-1">Email</h3>
+                    <p className="text-gray-600">info@endorphins.ca</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
                     <Clock className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Hours</h3>
-                    <p className="text-gray-400">Monday - Friday: 8:00 AM - 8:00 PM</p>
-                    <p className="text-gray-400">Saturday: 9:00 AM - 5:00 PM</p>
-                    <p className="text-gray-400">Sunday: Closed</p>
+                    <h3 className="text-gray-800 font-medium mb-1">Hours</h3>
+                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 8:00 PM</p>
+                    <p className="text-gray-600">Saturday: 9:00 AM - 5:00 PM</p>
+                    <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const ContactPage = () => {
             </motion.div>
             
             <motion.div
-              className="relative h-[400px] rounded-xl overflow-hidden"
+              className="relative h-[400px] rounded-xl overflow-hidden shadow-sm border border-gray-200"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}

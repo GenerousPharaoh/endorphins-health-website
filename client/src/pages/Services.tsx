@@ -10,10 +10,10 @@ const ServicePage = () => {
 
   return (
     <div>
-      <div className="pt-24 pb-8 bg-black">
+      <div className="pt-24 pb-8 bg-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-white text-center"
+            className="text-4xl md:text-5xl font-bold text-gray-800 text-center"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -21,7 +21,7 @@ const ServicePage = () => {
             Our Services
           </motion.h1>
           <motion.p 
-            className="mt-4 text-center text-gray-400 max-w-2xl mx-auto"
+            className="mt-4 text-center text-gray-600 max-w-2xl mx-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
