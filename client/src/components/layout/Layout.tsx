@@ -10,30 +10,24 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-// Page transition variants
+// Page transition variants - more subtle
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: 10,
-    scale: 0.98,
   },
   in: {
     opacity: 1,
-    y: 0,
-    scale: 1,
   },
   out: {
     opacity: 0,
-    y: -10,
-    scale: 0.98,
   },
 };
 
-// Transition configuration for smoother animations
+// Transition configuration - gentler and faster
 const pageTransition = {
   type: "tween",
-  ease: [0.25, 0.1, 0.25, 1], // cubic-bezier curve for smooth deceleration
-  duration: 0.4,
+  ease: "easeInOut",
+  duration: 0.2,
 };
 
 const Layout = ({ children }: LayoutProps) => {

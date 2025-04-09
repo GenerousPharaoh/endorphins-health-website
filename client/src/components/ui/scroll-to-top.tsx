@@ -7,8 +7,8 @@ export function ScrollToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button when page is scrolled 400px
-      if (window.scrollY > 400) {
+      // Show button when page is scrolled 500px (increased threshold)
+      if (window.scrollY > 500) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -32,25 +32,19 @@ export function ScrollToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed bottom-6 right-6 z-50 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 focus:outline-none group"
+          className="fixed bottom-6 right-6 z-50 p-2 bg-primary/80 text-white rounded-full shadow-md hover:bg-primary focus:outline-none group"
           aria-label="Scroll to top"
         >
           <motion.div
             className="relative flex items-center justify-center"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            whileHover={{ y: -2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <ChevronUp size={20} strokeWidth={2.5} />
-            <motion.span 
-              className="absolute inset-0 rounded-full bg-white/10"
-              initial={{ scale: 0 }}
-              whileHover={{ scale: 1.8, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            />
+            <ChevronUp size={16} strokeWidth={2} />
           </motion.div>
         </motion.button>
       )}
