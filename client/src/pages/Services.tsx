@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Services from "@/components/sections/Services";
+import Services from "../components/sections/Services";
 import { motion } from "framer-motion";
 
 const ServicePage = () => {

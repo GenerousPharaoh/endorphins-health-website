@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Tag, Calendar, Clock, ChevronRight, ArrowRight } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 import { 
   Card, 
   CardContent, 
@@ -10,8 +10,8 @@ import {
   CardFooter, 
   CardHeader, 
   CardTitle 
-} from "@/components/ui/card";
-import { blogPosts, getFeaturedPosts, formatDate, BlogPost, getRecentPosts } from '@/data/blog';
+} from "../../components/ui/card";
+import { blogPosts, getFeaturedPosts, formatDate, BlogPost, getRecentPosts } from '../../data/blog';
 
 type CategoryFilter = BlogPost['category'] | 'all';
 

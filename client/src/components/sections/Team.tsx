@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { teamMembers } from "@/data/team";
+import { teamMembers } from "../../data/team";
 import { ArrowLeft, ArrowRight, Mail, Phone, User } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
 
 const Team = () => {
   // Create a group of team members by category

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { services } from "@/data/services";
-import { Badge } from "@/components/ui/badge";
+import { services } from "../../data/services";
+import { Badge } from "../../components/ui/badge";
 import { ChevronRight } from "lucide-react";
 
 const Services = () => {

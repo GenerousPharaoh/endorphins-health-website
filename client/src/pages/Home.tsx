@@ -1,8 +1,8 @@
-import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Testimonials from "@/components/sections/Testimonials";
+import Hero from "../components/sections/Hero";
+import About from "../components/sections/About";
+import Testimonials from "../components/sections/Testimonials";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";

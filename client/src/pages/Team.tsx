@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Team from "@/components/sections/Team";
+import Team from "../components/sections/Team";
 import { motion } from "framer-motion";
 
 const TeamPage = () => {

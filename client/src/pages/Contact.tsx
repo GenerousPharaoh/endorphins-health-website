@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import Booking from "@/components/sections/Booking";
+import Booking from "../components/sections/Booking";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 
 const ContactPage = () => {
   useEffect(() => {
