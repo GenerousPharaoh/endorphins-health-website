@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Blog from "../components/sections/Blog";
+import BlogSection from "../components/sections/Blog";
 import { motion } from "framer-motion";
 
 const BlogPage = () => {
@@ -35,7 +35,7 @@ const BlogPage = () => {
           </motion.p>
         </div>
       </div>
-      <Blog />
+      <BlogSection />
     </motion.div>
   );
 };
