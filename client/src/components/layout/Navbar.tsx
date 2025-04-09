@@ -161,13 +161,31 @@ const Navbar = () => {
                   className="absolute inset-0 bg-primary/10 rounded-full"
                   initial={{ scale: 0 }}
                   animate={{ scale: isMobileMenuOpen ? 1 : 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                 />
-                {isMobileMenuOpen ? (
-                  <X size={24} />
-                ) : (
-                  <Menu size={24} />
-                )}
+                <AnimatePresence mode="wait" initial={false}>
+                  {isMobileMenuOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <X size={22} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ opacity: 0, rotate: 90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: -90 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <Menu size={22} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </button>
             </div>
           </div>
@@ -179,41 +197,41 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.98 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             className="fixed inset-0 md:hidden bg-black/95 backdrop-blur-md z-40 overflow-y-auto"
             style={{ 
-              background: "linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(20,20,20,0.98) 100%)"
+              background: "linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.95) 100%)"
             }}
           >
             <motion.div 
-              className="absolute top-0 left-0 w-1 h-full bg-primary"
+              className="absolute top-0 left-0 w-0.5 h-full bg-primary/80"
               initial={{ scaleY: 0, originY: 0 }}
               animate={{ scaleY: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ duration: 0.3 }}
             />
             
             <div className="container mx-auto px-6 py-20">
               <div className="flex flex-col space-y-1">
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
+                  transition={{ duration: 0.2, delay: 0.05 }}
                   className="overflow-hidden border-b border-white/10"
                 >
                   <Link href="/">
                     <motion.div 
                       className={`font-heading ${isActiveLink(location, '/') ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                       onClick={closeMobileMenu}
-                      whileHover={{ x: 10 }}
+                      whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <motion.div 
-                        className="w-1 h-10 bg-primary mr-6"
+                        className="w-0.5 h-10 bg-primary/80 mr-6"
                         initial={{ height: 0 }}
                         animate={{ height: 40 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
                       />
                       <HomeIcon size={20} className="mr-2" />
                       HOME
@@ -237,23 +255,23 @@ const Navbar = () => {
                 ].map((item, i) => (
                   <motion.div
                     key={item.label}
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.1) }}
+                    transition={{ duration: 0.2, delay: 0.05 + ((i+1) * 0.05) }}
                     className="overflow-hidden border-b border-white/10"
                   >
                     <Link href={item.path}>
                       <motion.div 
                         className={`font-heading ${isActiveLink(location, item.path) ? 'text-primary' : 'text-white'} hover:text-primary px-2 py-5 text-2xl uppercase font-bold tracking-widest transition-all flex items-center cursor-pointer`}
                         onClick={closeMobileMenu}
-                        whileHover={{ x: 10 }}
+                        whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <motion.div 
-                          className="w-1 h-10 bg-primary mr-6"
+                          className="w-0.5 h-10 bg-primary/80 mr-6"
                           initial={{ height: 0 }}
                           animate={{ height: 40 }}
-                          transition={{ duration: 0.4, delay: 0.2 + ((i+1) * 0.1) }}
+                          transition={{ duration: 0.3, delay: 0.1 + ((i+1) * 0.05) }}
                         />
                         {item.label}
                         <motion.div
@@ -271,16 +289,16 @@ const Navbar = () => {
                 
                 <motion.div 
                   className="pt-8"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
+                  transition={{ duration: 0.2, delay: 0.3 }}
                 >
                   <Link href="/contact">
                     <motion.div 
                       className="bg-primary hover:bg-primary/90 text-white uppercase tracking-widest font-bold py-5 text-center transition-all flex items-center justify-center text-lg rounded-sm overflow-hidden relative cursor-pointer"
                       onClick={closeMobileMenu}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
                     >
                       <motion.div 
                         className="absolute inset-0 bg-white/10"
@@ -293,14 +311,14 @@ const Navbar = () => {
                         <motion.span 
                           className="ml-2"
                           animate={{ 
-                            x: [0, 5, 0],
+                            x: [0, 3, 0],
                           }}
                           transition={{ 
                             repeat: Infinity, 
                             duration: 1.5
                           }}
                         >
-                          <ChevronRight size={20} />
+                          <ChevronRight size={18} />
                         </motion.span>
                       </span>
                     </motion.div>
@@ -311,8 +329,8 @@ const Navbar = () => {
                 <motion.div 
                   className="mt-12 border-t border-white/10 pt-8 text-white/70"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.6 }}
+                  animate={{ opacity: 0.8 }}
+                  transition={{ duration: 0.3, delay: 0.4 }}
                 >
                   <div className="space-y-4">
                     <p className="flex items-center text-sm">

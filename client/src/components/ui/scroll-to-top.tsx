@@ -36,7 +36,7 @@ export function ScrollToTop() {
           animate={{ opacity: 0.8 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed bottom-6 right-6 z-50 p-2 bg-primary/80 text-white rounded-full shadow-md hover:bg-primary focus:outline-none group"
+          className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 p-2 bg-primary/80 text-white rounded-full shadow-md hover:bg-primary focus:outline-none group"
           aria-label="Scroll to top"
         >
           <motion.div
