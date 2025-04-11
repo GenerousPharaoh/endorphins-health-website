@@ -44,8 +44,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-03-15',
     readTime: 5,
     featured: true,
-    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"%3E%3Crect width="1200" height="630" fill="%23f7fafc"/%3E%3Cpath d="M600,150 C700,150 780,300 780,420 C780,540 700,580 600,580 C500,580 420,540 420,420 C420,300 500,150 600,150 Z" fill="%23e2e8f0" stroke="%2382a4d3" stroke-width="8"/%3E%3Cpath d="M600,220 L600,500 M540,240 L660,240 M520,300 L680,300 M500,360 L700,360 M520,420 L680,420 M540,480 L660,480" stroke="%232b6cb0" stroke-width="12" stroke-linecap="round"/%3E%3Ccircle cx="600" cy="220" r="25" fill="%23f56565"/%3E%3Ccircle cx="600" cy="300" r="15" fill="%23f56565"/%3E%3Ccircle cx="600" cy="380" r="15" fill="%23f56565"/%3E%3Ccircle cx="600" cy="460" r="15" fill="%23f56565"/%3E%3C/svg%3E',
-    altText: 'Abstract spine illustration'
+    image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+    altText: 'Chiropractor adjusting patient\'s spine'
   },
   {
     id: 'stretches-for-desk-workers',
@@ -77,8 +77,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-03-02',
     readTime: 4,
     featured: true,
-    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"%3E%3Crect width="1200" height="630" fill="%23ebf8ff"/%3E%3Crect x="200" y="150" width="300" height="200" rx="20" fill="%23bee3f8" stroke="%234299e1" stroke-width="5"/%3E%3Crect x="600" y="300" width="300" height="100" rx="10" fill="%23bee3f8" stroke="%234299e1" stroke-width="5"/%3E%3Cpath d="M400,150 C400,80 400,80 600,80 M600,80 C800,80 800,80 800,150" stroke="%233182ce" stroke-width="15" stroke-linecap="round" fill="none"/%3E%3Cpath d="M400,350 C400,450 400,450 600,450 M600,450 C800,450 800,450 800,400" stroke="%233182ce" stroke-width="15" stroke-linecap="round" fill="none"/%3E%3Ccircle cx="350" cy="250" r="30" fill="%2363b3ed" stroke="%234299e1" stroke-width="5"/%3E%3Ccircle cx="750" cy="350" r="30" fill="%2363b3ed" stroke="%234299e1" stroke-width="5"/%3E%3Cpath d="M350,200 L350,300 M325,250 L375,250" stroke="%23fff" stroke-width="8" stroke-linecap="round"/%3E%3Cpath d="M750,330 L750,370 M730,350 L770,350" stroke="%23fff" stroke-width="8" stroke-linecap="round"/%3E%3C/svg%3E',
-    altText: 'Abstract desk exercise illustration'
+    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+    altText: 'Person doing a desk stretch at workspace'
   },
   {
     id: 'massage-therapy-benefits',
@@ -133,8 +133,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-02-18',
     readTime: 6,
     featured: false,
-    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"%3E%3Crect width="1200" height="630" fill="%23f0fff4"/%3E%3Cellipse cx="300" cy="200" rx="200" ry="100" fill="%23c6f6d5" stroke="%2368d391" stroke-width="8"/%3E%3Cellipse cx="600" cy="330" rx="200" ry="100" fill="%23c6f6d5" stroke="%2368d391" stroke-width="8"/%3E%3Cellipse cx="900" cy="450" rx="200" ry="100" fill="%23c6f6d5" stroke="%2368d391" stroke-width="8"/%3E%3Cpath d="M300,200 C400,230 500,260 600,330 C700,400 800,430 900,450" stroke="%2338a169" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="20,15"/%3E%3Ccircle cx="300" cy="200" r="20" fill="%239ae6b4"/%3E%3Ccircle cx="600" cy="330" r="20" fill="%239ae6b4"/%3E%3Ccircle cx="900" cy="450" r="20" fill="%239ae6b4"/%3E%3C/svg%3E',
-    altText: 'Abstract massage therapy waves'
+    image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+    altText: 'Massage therapist performing therapeutic massage'
   },
   {
     id: 'nutrition-for-recovery',
@@ -203,8 +203,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-02-10',
     readTime: 7,
     featured: false,
-    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"%3E%3Crect width="1200" height="630" fill="%23fffaf0"/%3E%3Ccircle cx="350" cy="220" r="120" fill="%23feebc8" stroke="%23f6ad55" stroke-width="6"/%3E%3Cpath d="M350,130 L350,310 M260,220 L440,220" stroke="%23dd6b20" stroke-width="8" stroke-linecap="round"/%3E%3Ccircle cx="600" cy="350" r="100" fill="%23feebc8" stroke="%23f6ad55" stroke-width="6"/%3E%3Crect x="550" y="300" width="100" height="100" rx="10" fill="%23feebc8" stroke="%23f6ad55" stroke-width="6"/%3E%3Ccircle cx="850" cy="220" r="80" fill="%23feebc8" stroke="%23f6ad55" stroke-width="6"/%3E%3Cpath d="M800,170 L900,270 M900,170 L800,270" stroke="%23dd6b20" stroke-width="8" stroke-linecap="round"/%3E%3Cpath d="M350,400 C350,480 500,500 600,500 C700,500 850,480 850,400" stroke="%23dd6b20" stroke-width="8" stroke-linecap="round" fill="none"/%3E%3C/svg%3E',
-    altText: 'Abstract healthy nutrition diagram'
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+    altText: 'Healthy food for recovery and healing'
   }
 ];
 
