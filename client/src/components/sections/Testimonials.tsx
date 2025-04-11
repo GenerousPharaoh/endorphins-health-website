@@ -49,7 +49,7 @@ const Testimonials = () => {
     <section 
       id="testimonials" 
       ref={ref}
-      className="relative py-24 bg-[#080808]"
+      className="relative py-24 bg-gray-900"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -91,7 +91,7 @@ const Testimonials = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Main Testimonial Display */}
-          <div className="relative bg-gradient-to-r from-[#0e0e0e] to-[#141414] p-6 md:p-10 rounded-xl overflow-hidden">
+          <div className="relative bg-gradient-to-r from-gray-800 to-gray-900 p-6 md:p-10 rounded-xl overflow-hidden border border-gray-700 shadow-xl">
             {/* Top quotation mark */}
             <div className="absolute top-4 right-4 text-primary/20">
               <Quote size={80} />

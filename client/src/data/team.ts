@@ -4,7 +4,7 @@ export interface TeamMember {
   title: string;
   bio: string;
   image: string;
-  category: 'chiropractic' | 'physiotherapy' | 'massage-therapy' | 'athletic-therapy' | 'acupuncture' | 'podiatry';
+  category: 'chiropractic' | 'physiotherapy' | 'massage-therapy' | 'athletic-therapy' | 'acupuncture' | 'podiatry' | 'chiropody';
 }
 
 export const teamMembers: TeamMember[] = [
@@ -55,5 +55,37 @@ export const teamMembers: TeamMember[] = [
     bio: "James specializes in relaxation and therapeutic massage, focusing on stress reduction and overall wellness for his clients.",
     image: "/placeholder",
     category: "massage-therapy"
+  },
+  {
+    id: "alex-mitchell",
+    name: "Alex Mitchell",
+    title: "Athletic Therapist",
+    bio: "Alex specializes in sports-related injuries and rehabilitation for athletes of all levels, helping them return to peak performance safely and effectively.",
+    image: "/placeholder",
+    category: "athletic-therapy"
+  },
+  {
+    id: "sophia-patel",
+    name: "Sophia Patel",
+    title: "Certified Athletic Therapist",
+    bio: "Sophia combines strength training and therapeutic techniques to treat sports injuries and enhance athletic performance for competitive and recreational athletes.",
+    image: "/placeholder",
+    category: "athletic-therapy"
+  },
+  {
+    id: "daniel-rivera",
+    name: "Daniel Rivera",
+    title: "Chiropodist",
+    bio: "Daniel specializes in diagnosing and treating conditions of the foot and ankle, offering comprehensive foot care for patients of all ages.",
+    image: "/placeholder",
+    category: "chiropody"
+  },
+  {
+    id: "rachel-kim",
+    name: "Rachel Kim",
+    title: "Registered Chiropodist",
+    bio: "Rachel provides expert foot care including nail surgery, custom orthotics, and diabetic foot assessments to help patients maintain optimal foot health.",
+    image: "/placeholder",
+    category: "chiropody"
   }
 ];
