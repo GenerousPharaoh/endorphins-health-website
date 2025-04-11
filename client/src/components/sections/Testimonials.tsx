@@ -110,13 +110,13 @@ const Testimonials = () => {
                 >
                   <div className="mb-6 md:mb-0 md:w-1/3 flex justify-center md:justify-start">
                     <motion.div 
-                      className="relative w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden"
+                      className="relative w-20 h-20 md:w-28 md:h-28 rounded-lg overflow-hidden shadow-md"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
                       <div 
-                        className="w-full h-full bg-cover bg-center rounded-full border-4 border-primary/30"
+                        className="w-full h-full bg-cover bg-center border-2 border-primary/30"
                         style={{ backgroundImage: `url(${testimonials[activeIndex].image})` }}
                       />
                     </motion.div>
@@ -167,7 +167,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={prev}
-              className="rounded-full bg-[#0e0e0e] border-[#1a1a1a] text-white hover:bg-primary/80 hover:text-white hover:border-primary"
+              className="rounded-full bg-gray-800 border-gray-700 text-white hover:bg-primary/80 hover:text-white hover:border-primary"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>

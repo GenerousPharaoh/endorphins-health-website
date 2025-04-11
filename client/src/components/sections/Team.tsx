@@ -148,7 +148,7 @@ const Team = () => {
                   >
                     <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 relative overflow-hidden">
                       <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-full shrink-0 mx-auto sm:mx-0">
-                        <span className="text-primary font-bold text-lg">{member.name.charAt(0)}</span>
+                        <span className="text-primary font-bold text-lg">{member.title.charAt(0)}</span>
                       </div>
                       
                       <div className="flex-grow text-center sm:text-left">
