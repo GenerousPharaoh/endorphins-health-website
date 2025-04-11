@@ -50,7 +50,7 @@ const Services = () => {
                       : "bg-white text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  <span className="font-medium text-sm">{service.title}</span>
+                  <span className="font-medium text-sm">{service.title.split(' ')[0]}</span>
                 </button>
               ))}
             </div>
@@ -96,7 +96,7 @@ const Services = () => {
 
                 <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{serviceDetail.description}</p>
 
-                <div className="overflow-hidden rounded-lg">
+                <div className="overflow-hidden rounded-lg max-h-[200px] sm:max-h-none">
                   <img 
                     src={serviceDetail.image} 
                     alt={serviceDetail.altText}
