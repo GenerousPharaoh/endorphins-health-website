@@ -105,22 +105,15 @@ const Services = () => {
                 </div>
 
                 <div className="mt-4 sm:mt-6 flex justify-end">
-                  <motion.a 
+                  <a 
                     href="#booking" 
                     className="inline-flex items-center px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-md"
-                    whileHover={{ x: 3 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.1 }}
                   >
                     <span className="font-medium">Book Now</span>
-                    <motion.span
-                      animate={{ x: [0, 3, 0] }}
-                      transition={{ repeat: Infinity, duration: 1.5 }}
-                      className="ml-1 sm:ml-2"
-                    >
+                    <span className="ml-1 sm:ml-2">
                       <ChevronRight size={16} className="sm:h-5 sm:w-5" />
-                    </motion.span>
-                  </motion.a>
+                    </span>
+                  </a>
                 </div>
               </motion.div>
             )}
