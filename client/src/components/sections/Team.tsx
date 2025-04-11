@@ -221,7 +221,7 @@ const Team = () => {
               <div className="p-4 sm:p-6 md:p-8">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
                   <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto sm:mx-0">
-                    <User className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
+                    <span className="text-primary font-bold text-2xl sm:text-3xl">{activeMember.title.charAt(0)}</span>
                   </div>
                   <div className="text-center sm:text-left">
                     <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">

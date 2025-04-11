@@ -190,7 +190,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={next}
-              className="rounded-full bg-[#0e0e0e] border-[#1a1a1a] text-white hover:bg-primary/80 hover:text-white hover:border-primary"
+              className="rounded-full bg-gray-800 border-gray-700 text-white hover:bg-primary/80 hover:text-white hover:border-primary"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
