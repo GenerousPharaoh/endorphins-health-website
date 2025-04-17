@@ -24,8 +24,8 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative bg-white py-16 lg:py-24">
-      <div className="absolute inset-0 opacity-5 overflow-hidden pointer-events-none">
+    <section className="relative bg-background pt-28 pb-16 lg:pt-32 lg:pb-24">
+      <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/30 blur-3xl"></div>
         <div className="absolute top-1/3 -left-24 w-64 h-64 rounded-full bg-amber-400/20 blur-3xl"></div>
       </div>
@@ -39,11 +39,11 @@ const Hero = () => {
             variants={fadeIn}
             className="text-center lg:text-left"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               Revitalize Your <span className="text-primary">Health</span> and <span className="text-primary">Wellness</span>
             </h1>
             
-            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
               Endorphins Health and Wellness Centre offers multidisciplinary healthcare services to help you achieve optimal health and performance.
             </p>
             
@@ -69,7 +69,7 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-gray-400 text-gray-700 hover:bg-gray-100/80"
+                className="border-primary/50 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
               >
                 <a href="#services" className="flex items-center">
                   Our Services
@@ -83,7 +83,7 @@ const Hero = () => {
                 <a
                   key={service.name}
                   href={service.link}
-                  className="text-gray-600 hover:text-primary flex items-center text-xs sm:text-sm font-medium transition-colors duration-200"
+                  className="text-muted-foreground hover:text-primary flex items-center text-xs sm:text-sm font-medium transition-colors duration-200"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                   {service.name}

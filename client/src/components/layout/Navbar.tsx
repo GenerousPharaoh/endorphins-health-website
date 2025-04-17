@@ -40,7 +40,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className={`bg-white text-gray-800 shadow-sm ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
+      <div className={`bg-background text-foreground border-b border-border shadow-sm ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -51,16 +51,16 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
-                  <div className="relative h-9 w-9 mr-3 bg-white border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
-                    <span className="text-gray-800 font-bold text-xs">E</span>
+                  <div className="relative h-9 w-9 mr-3 bg-muted border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
+                    <span className="text-foreground font-bold text-xs">E</span>
                     <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
                     <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
-                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="flex flex-col leading-none">
                     <motion.div className="flex items-center">
                       <motion.span 
-                        className="text-gray-800 text-base sm:text-xl font-black tracking-tight"
+                        className="text-foreground text-base sm:text-xl font-black tracking-tight"
                         whileHover={{ 
                           scale: 1.02,
                           transition: { duration: 0.3 }
@@ -71,7 +71,7 @@ const Navbar = () => {
                     </motion.div>
                     <div className="flex items-center gap-2">
                       <div className="w-5 h-[2px] bg-primary"></div>
-                      <span className="text-gray-600 text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
+                      <span className="text-muted-foreground text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 {
-  "variant": "tint",
+  "variant": "professional",
   "primary": "hsl(26, 85%, 55%)",
-  "appearance": "light",
+  "appearance": "dark",
   "radius": 0.75
 }
