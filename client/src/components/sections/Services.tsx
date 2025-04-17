@@ -19,7 +19,7 @@ const Services = () => {
   const serviceDetail = services.find((s) => s.id === selectedService);
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-background relative">
       <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-amber-500/30 blur-3xl"></div>
         <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-primary/20 blur-3xl"></div>
@@ -27,11 +27,11 @@ const Services = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
-          <Badge className="bg-primary/10 text-primary mb-3">Our Specialties</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <Badge className="bg-primary/20 text-primary mb-3">Our Specialties</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Comprehensive Care Services
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base">
+          <p className="max-w-2xl mx-auto text-muted-foreground text-sm sm:text-base">
             Our multidisciplinary team offers personalized care to help you achieve optimal health and wellness through a variety of specialized treatments.
           </p>
         </div>
@@ -47,7 +47,7 @@ const Services = () => {
                   className={`px-4 py-3 rounded-lg transition-all duration-150 whitespace-nowrap flex-shrink-0 shadow-sm ${
                     selectedService === service.id 
                       ? "bg-primary/20 text-primary font-medium" 
-                      : "bg-white text-gray-700 hover:bg-gray-100"
+                      : "bg-card text-card-foreground hover:bg-muted"
                   }`}
                 >
                   <span className="font-medium text-sm">{service.title.split(' ')[0]}</span>
@@ -58,7 +58,7 @@ const Services = () => {
 
           {/* Service List for Desktop */}
           <div className="hidden md:block md:col-span-5 lg:col-span-4">
-            <div className="bg-white rounded-xl p-4 shadow-md">
+            <div className="bg-card rounded-xl p-4 shadow-md border border-border">
               <div className="space-y-2">
                 {services.map((service) => (
                   <button
@@ -67,7 +67,7 @@ const Services = () => {
                     className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-150 flex items-center ${
                       selectedService === service.id 
                         ? "bg-primary/10 text-primary" 
-                        : "text-gray-700 hover:bg-gray-100"
+                        : "text-card-foreground hover:bg-muted"
                     }`}
                   >
                     <div>
@@ -90,11 +90,11 @@ const Services = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white p-4 sm:p-6 rounded-xl shadow-md h-full border border-gray-100"
+                className="bg-card p-4 sm:p-6 rounded-xl shadow-md h-full border border-border"
               >
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">{serviceDetail.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-3 sm:mb-4">{serviceDetail.title}</h3>
 
-                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{serviceDetail.description}</p>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{serviceDetail.description}</p>
 
                 <div className="overflow-hidden rounded-lg max-h-[200px] sm:max-h-none">
                   <img 
@@ -107,7 +107,7 @@ const Services = () => {
                 <div className="mt-4 sm:mt-6 flex justify-end">
                   <a 
                     href="#booking" 
-                    className="inline-flex items-center px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-md"
+                    className="inline-flex items-center px-4 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors shadow-md"
                   >
                     <span className="font-medium">Book Now</span>
                     <span className="ml-1 sm:ml-2">
