@@ -14,7 +14,7 @@ type ThemeProviderState = {
 };
 
 const initialState: ThemeProviderState = {
-  theme: "light",
+  theme: "dark", // Set default to dark
   setTheme: () => null,
 };
 
@@ -22,7 +22,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "light",
+  defaultTheme = "dark", // Change default to dark
   storageKey = "ui-theme",
   ...props
 }: ThemeProviderProps) {
@@ -33,11 +33,12 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Remove the 'dark' class to ensure light theme
-    root.classList.remove("dark");
-    
-    // Set light theme properties if needed
-    // root.dataset.theme = "light";
+    // Apply the appropriate theme class
+    if (theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
   }, [theme]);
 
   const value = {

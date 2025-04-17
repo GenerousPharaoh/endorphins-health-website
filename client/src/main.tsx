@@ -8,7 +8,7 @@ import { ThemeProvider } from "./components/ui/theme-provider";
 
 createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
       <App />
       <Toaster />
     </ThemeProvider>
