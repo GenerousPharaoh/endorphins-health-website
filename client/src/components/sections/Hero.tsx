@@ -24,10 +24,23 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative bg-background pt-28 pb-16 lg:pt-32 lg:pb-24">
-      <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/30 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-24 w-64 h-64 rounded-full bg-amber-400/20 blur-3xl"></div>
+    <section className="relative bg-background pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-border">
+      {/* Enhanced background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Primary gradient blob */}
+        <div className="absolute -top-40 -right-40 w-[30rem] h-[30rem] rounded-full bg-primary/20 blur-3xl animate-slow-pulse"></div>
+        
+        {/* Secondary gradient blob */}
+        <div className="absolute top-1/3 -left-24 w-[25rem] h-[25rem] rounded-full bg-amber-400/15 blur-3xl animate-slow-pulse-delay"></div>
+        
+        {/* Additional depth elements */}
+        <div className="absolute bottom-10 right-1/4 w-64 h-64 rounded-full bg-secondary/10 blur-3xl animate-slow-drift"></div>
+        
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+        
+        {/* Diagonal accent line */}
+        <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform rotate-[30deg] origin-top-left"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,18 +105,38 @@ const Hero = () => {
             </div>
           </motion.div>
           
-          {/* Right Column - Image */}
+          {/* Right Column - Image with enhanced styling */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 sm:mt-8 lg:mt-0"
+            className="mt-6 sm:mt-8 lg:mt-0 relative group"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" 
-              alt="Health professionals at Endorphins Health and Wellness Centre" 
-              className="rounded-lg shadow-xl w-full h-auto object-cover"
-            />
+            {/* Glowing border effect on hover */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-amber-500/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            
+            {/* Decorative corner elements */}
+            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-primary/70 rounded-tl-md"></div>
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-primary/70 rounded-br-md"></div>
+            
+            <div className="relative rounded-lg shadow-2xl overflow-hidden border border-border">
+              <img 
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" 
+                alt="Health professionals at Endorphins Health and Wellness Centre" 
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              {/* Subtle overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+              
+              {/* Image caption */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
+                <p className="text-sm text-white/90 text-center font-medium">Professional healthcare in a welcoming environment</p>
+              </div>
+            </div>
+            
+            {/* Corner accent element */}
+            <div className="absolute -top-3 -right-3 w-12 h-12 bg-primary/80 rounded-full blur-xl opacity-40"></div>
           </motion.div>
         </div>
       </div>

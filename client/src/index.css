@@ -38,24 +38,41 @@
   }
 
   .dark {
-    --background: 26 20% 15%;
-    --foreground: 40 15% 90%;
-    --card: 26 20% 15%;
-    --card-foreground: 40 15% 90%;
-    --popover: 26 20% 15%;
-    --popover-foreground: 40 15% 90%;
+    /* Rich navy blue background */
+    --background: 220 40% 13%;
+    --foreground: 210 20% 98%;
+    
+    /* Slightly lighter navy for cards */
+    --card: 218 45% 17%;
+    --card-foreground: 210 20% 98%;
+    
+    /* Popover styling */
+    --popover: 218 45% 17%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Vibrant amber/orange as primary accent */
     --primary: 26 85% 55%;
-    --primary-foreground: 26 10% 15%;
-    --secondary: 46 70% 65%;
-    --secondary-foreground: 26 10% 15%;
-    --muted: 26 15% 25%;
-    --muted-foreground: 40 15% 70%;
+    --primary-foreground: 220 40% 16%;
+    
+    /* Secondary color - soft gold */
+    --secondary: 42 70% 65%;
+    --secondary-foreground: 220 40% 16%;
+    
+    /* Muted navy colors for subtle elements */
+    --muted: 220 35% 20%;
+    --muted-foreground: 215 15% 65%;
+    
+    /* Accent color - warmer orange */
     --accent: 18 80% 60%;
-    --accent-foreground: 40 15% 90%;
+    --accent-foreground: 210 20% 98%;
+    
+    /* Destructive color - warm red */
     --destructive: 0 70% 50%;
-    --destructive-foreground: 40 15% 90%;
-    --border: 26 15% 30%;
-    --input: 26 15% 30%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Border and input styling */
+    --border: 217 33% 24%;
+    --input: 217 33% 24%;
     --ring: 26 85% 55%;
   }
   

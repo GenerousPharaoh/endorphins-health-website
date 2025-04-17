@@ -40,7 +40,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className={`bg-background text-foreground border-b border-border shadow-sm ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
+      <div className={`bg-card text-foreground border-b border-border backdrop-blur-md shadow-md ${isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'} transition-all duration-300`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -200,7 +200,7 @@ const Navbar = () => {
             animate={{ opacity: 0.98 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 md:hidden bg-background/95 backdrop-blur-md z-40 overflow-y-auto shadow-lg"
+            className="fixed inset-0 md:hidden bg-card/95 backdrop-blur-md z-40 overflow-y-auto shadow-lg"
           >
             <motion.div 
               className="absolute top-0 left-0 w-0.5 h-full bg-primary/80"
