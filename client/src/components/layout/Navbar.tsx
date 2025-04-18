@@ -4,11 +4,6 @@ import { Button } from "../../components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, MapPin, Phone, Mail, Home as HomeIcon } from "lucide-react";
 
-// Import SVG logo images 
-import logoTextPath from "../../assets/endorphins-logo-text.svg";
-import logoEmblemPath from "../../assets/endorphins-logo-emblem.svg";
-import logoSubtitlePath from "../../assets/endorphins-subtitle.svg";
-
 // Helper function to check if a link is active
 const isActiveLink = (currentPath: string, linkPath: string): boolean => {
   if (linkPath === "/" && currentPath === "/") return true;
@@ -56,33 +51,27 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
-                  {/* Logo Emblem */}
-                  <motion.div 
-                    className="relative h-9 w-9 mr-3 overflow-hidden flex items-center justify-center"
-                    whileHover={{ rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <img src={logoEmblemPath} alt="Endorphins Logo" className="w-full h-full object-contain" />
-                  </motion.div>
-                  
+                  <div className="relative h-9 w-9 mr-3 bg-muted border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
+                    <span className="text-foreground font-bold text-xs">E</span>
+                    <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <div className="flex flex-col leading-none">
-                    {/* Main Logo Text */}
                     <motion.div className="flex items-center">
-                      <motion.div
+                      <motion.span 
+                        className="text-foreground text-base sm:text-xl font-black tracking-tight"
                         whileHover={{ 
                           scale: 1.02,
                           transition: { duration: 0.3 }
                         }}
-                        className="h-5 sm:h-6"
                       >
-                        <img src={logoTextPath} alt="Endorphins" className="h-full" />
-                      </motion.div>
+                        ENDORPHINS
+                      </motion.span>
                     </motion.div>
-                    
-                    {/* Subtitle */}
-                    <div className="flex items-center">
-                      <div className="w-5 h-[2px] bg-primary mr-2"></div>
-                      <img src={logoSubtitlePath} alt="HEALTH & WELLNESS CENTRE" className="h-3" />
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-[2px] bg-primary"></div>
+                      <span className="text-muted-foreground text-[9px] sm:text-[11px] font-medium tracking-widest">WELLNESS CENTRE</span>
                     </div>
                   </div>
                 </div>
@@ -221,25 +210,6 @@ const Navbar = () => {
             />
             
             <div className="container mx-auto px-6 py-20">
-              {/* Mobile Menu Logo */}
-              <motion.div 
-                className="flex justify-center items-center mb-8"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex items-center">
-                  <img src={logoEmblemPath} alt="Endorphins Logo" className="w-10 h-10 mr-3" />
-                  <div className="flex flex-col">
-                    <img src={logoTextPath} alt="Endorphins" className="h-7 mb-1" />
-                    <div className="flex items-center">
-                      <div className="w-5 h-[2px] bg-primary mr-2"></div>
-                      <img src={logoSubtitlePath} alt="HEALTH & WELLNESS CENTRE" className="h-3" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              
               <div className="flex flex-col space-y-1">
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
