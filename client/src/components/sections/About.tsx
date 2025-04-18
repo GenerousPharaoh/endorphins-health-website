@@ -54,27 +54,44 @@ const About = () => {
             transition={{ duration: 0.4 }}
             className="relative group"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="relative">
-              <img 
-                src={clinic_exterior} 
-                alt="Endorphins Health and Wellness Centre exterior" 
-                className="rounded-lg shadow-xl w-full h-auto object-cover border border-border group-hover:border-primary/50 transition-colors duration-300"
-              />
-              <motion.div 
-                className="absolute -bottom-4 -right-4 w-20 h-20 bg-white p-1 rounded-lg shadow-lg overflow-hidden z-10"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.3 }}
-              >
+            {/* Photo frame with dynamic effects */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-amber-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
+            
+            <div className="relative p-2 bg-card rounded-lg shadow-xl overflow-hidden border border-border/60 group-hover:border-primary/40 transition-colors duration-500">
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100 z-10"></div>
+              
+              {/* Main image with refined hover effects */}
+              <div className="relative overflow-hidden rounded-md">
                 <img 
-                  src={clinic_logo}
-                  alt="Endorphins logo"
-                  className="w-full h-full object-cover"
+                  src={clinic_exterior} 
+                  alt="Endorphins Health and Wellness Centre exterior" 
+                  className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-105"
                 />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-lg opacity-20 group-hover:opacity-0 transition-opacity duration-300"></div>
+                
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-30 group-hover:opacity-0 transition-opacity duration-500"></div>
+                
+                {/* Logo badge with enhanced positioning and animation */}
+                <motion.div 
+                  className="absolute -bottom-4 -right-4 w-20 h-20 bg-white p-1 rounded-lg shadow-xl overflow-hidden z-10 border-2 border-white/80"
+                  initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6, duration: 0.4, type: "spring" }}
+                >
+                  <img 
+                    src={clinic_logo}
+                    alt="Endorphins logo"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+              
+              {/* Accent element */}
+              <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-primary/0 group-hover:border-primary/60 transition-colors duration-500 rounded-tl-md"></div>
+              <div className="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-primary/0 group-hover:border-primary/60 transition-colors duration-500 rounded-br-md"></div>
             </div>
           </motion.div>
           

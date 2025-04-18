@@ -352,63 +352,129 @@ const Team = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {clinicPhotos.map((photo, index) => (
-              <motion.div
-                key={index}
-                className="relative group cursor-pointer rounded-lg overflow-hidden shadow-md border border-border h-64"
-                onClick={() => openPhotoViewer(photo.src)}
-                whileHover={{ scale: 1.02 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.3, delay: 0.1 * index }}
-              >
-                <img 
-                  src={photo.src} 
-                  alt={photo.alt} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <h3 className="text-white text-lg font-medium">{photo.title}</h3>
-                  <div className="mt-2 flex items-center">
-                    <Camera className="w-4 h-4 text-primary mr-1" />
-                    <span className="text-white/90 text-xs">View</span>
+          {/* Photo Gallery with Visual Interest */}
+          <div className="grid grid-cols-12 gap-3 sm:gap-5">
+            {clinicPhotos.map((photo, index) => {
+              // Create a visually interesting layout with varying spans
+              const spans = [
+                "col-span-12 sm:col-span-8 md:col-span-6 h-64 sm:h-80", // First photo larger
+                "col-span-12 sm:col-span-4 md:col-span-6 h-64", // Second photo
+                "col-span-6 sm:col-span-6 md:col-span-4 h-56 sm:h-64", // Third photo
+                "col-span-6 sm:col-span-6 md:col-span-8 h-56 sm:h-64", // Fourth photo
+              ];
+              
+              return (
+                <motion.div
+                  key={index}
+                  className={`${spans[index]} relative group cursor-pointer rounded-lg overflow-hidden shadow-lg border border-border`}
+                  onClick={() => openPhotoViewer(photo.src)}
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.15 * index,
+                    ease: [0.25, 0.1, 0.25, 1]
+                  }}
+                >
+                  <div className="relative w-full h-full overflow-hidden">
+                    <img 
+                      src={photo.src} 
+                      alt={photo.alt} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    
+                    {/* Design elements */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    
+                    {/* Accent corners */}
+                    <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-white/0 group-hover:border-white/80 transition-all duration-500 rounded-tl-sm"></div>
+                    <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-white/0 group-hover:border-white/80 transition-all duration-500 rounded-br-sm"></div>
+                    
+                    <div className="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                      <motion.h3 
+                        className="text-white text-lg font-medium mb-1"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 + 0.1 * index }}
+                      >
+                        {photo.title}
+                      </motion.h3>
+                      
+                      <p className="text-white/90 text-sm line-clamp-2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                        {photo.description}
+                      </p>
+                      
+                      <div className="flex items-center">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs backdrop-blur-sm">
+                          <Camera className="w-3.5 h-3.5 text-primary" />
+                          View Fullscreen
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
         
-        {/* Fullscreen Photo Viewer */}
+        {/* Enhanced Fullscreen Photo Viewer with Context */}
         <AnimatePresence>
           {viewingGallery && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
               onClick={closePhotoViewer}
             >
+              {/* Background decorative elements */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-60"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-60"></div>
+                <div className="absolute -left-20 top-1/4 w-40 h-40 rounded-full bg-primary/10 blur-3xl"></div>
+                <div className="absolute -right-20 bottom-1/4 w-40 h-40 rounded-full bg-amber-500/5 blur-3xl"></div>
+              </div>
+
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ type: "spring", damping: 25 }}
-                className="relative max-w-5xl max-h-[80vh] overflow-hidden rounded-lg"
+                transition={{ type: "spring", damping: 22, stiffness: 100 }}
+                className="relative max-w-6xl w-full flex flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img 
-                  src={selectedPhoto} 
-                  alt="Enlarged clinic view" 
-                  className="w-full h-auto max-h-[80vh] object-contain"
-                />
+                {/* Image container with subtle border effect */}
+                <div className="relative rounded-lg overflow-hidden max-h-[75vh] w-auto border border-white/10 shadow-2xl">
+                  {/* Corner decorative elements */}
+                  <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-primary/40 rounded-tl-md z-10 pointer-events-none"></div>
+                  <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-primary/40 rounded-br-md z-10 pointer-events-none"></div>
+                  
+                  <img 
+                    src={selectedPhoto} 
+                    alt="Endorphins Health and Wellness Centre" 
+                    className="w-full h-auto max-h-[75vh] object-contain"
+                  />
+                </div>
+                
+                {/* Caption area below image */}
+                <div className="mt-4 text-center max-w-2xl">
+                  <p className="text-white/80 text-sm">
+                    Our facility is designed to create a calming environment that promotes healing and wellness
+                  </p>
+                </div>
+                
+                {/* Close button */}
                 <Button
                   onClick={closePhotoViewer}
-                  className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 h-auto"
+                  className="absolute -top-2 -right-2 bg-black/60 border border-white/10 hover:bg-black/80 text-white rounded-full p-2 h-auto shadow-lg"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </Button>
               </motion.div>
             </motion.div>
