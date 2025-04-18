@@ -13,10 +13,16 @@ const ContactPage = () => {
 
   return (
     <div>
-      <div className="pt-24 pb-8 bg-primary/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-24 pb-8 bg-background relative border-b border-border">
+        {/* Background decoration elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[25rem] h-[25rem] rounded-full bg-primary/10 blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-gray-800 text-center"
+            className="text-4xl md:text-5xl font-bold text-foreground text-center"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -24,7 +30,7 @@ const ContactPage = () => {
             Contact Us
           </motion.h1>
           <motion.p 
-            className="mt-4 text-center text-gray-600 max-w-2xl mx-auto"
+            className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -35,17 +41,17 @@ const ContactPage = () => {
       </div>
 
       {/* Contact Information */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div 
-              className="bg-white p-8 rounded-xl shadow-sm border border-gray-200"
+              className="bg-card p-8 rounded-xl shadow-md border border-border"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Badge className="bg-primary/10 text-primary mb-4">Contact Information</Badge>
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start">
