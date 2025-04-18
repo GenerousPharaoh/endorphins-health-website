@@ -58,7 +58,7 @@ const About = () => {
               <div 
                 className="w-full h-[400px] bg-cover bg-center transition duration-500 group-hover:scale-105"
                 style={{ 
-                  backgroundImage: "url('/exterior-photo.jpeg')", 
+                  backgroundImage: "url('/exterior-photo-new.jpeg')", 
                   backgroundPosition: 'center',
                   backgroundSize: 'cover'
                 }}
