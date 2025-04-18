@@ -50,7 +50,7 @@ const Team = () => {
     <section 
       id="team" 
       ref={ref}
-      className="relative bg-white py-24"
+      className="relative bg-background py-24"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -72,10 +72,10 @@ const Team = () => {
           transition={{ duration: 0.7 }}
         >
           <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Our Specialists</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Meet Our <span className="text-primary">Expert Team</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 mb-8">
+          <p className="max-w-2xl mx-auto text-muted-foreground mb-8">
             Our multidisciplinary team of healthcare professionals is dedicated to providing personalized care to help you achieve optimal wellness.
           </p>
 
@@ -137,14 +137,14 @@ const Team = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-white rounded-lg border border-gray-100 shadow-md overflow-hidden">
+              <div className="bg-card rounded-lg border border-border shadow-md overflow-hidden">
                 {activeTeam.map((member, index) => (
                   <motion.div
                     key={member.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="group border-b border-gray-100 last:border-b-0 hover:bg-gray-50/80"
+                    className="group border-b border-border last:border-b-0 hover:bg-muted/50"
                   >
                     <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 relative overflow-hidden">
                       <div className="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-full shrink-0 mx-auto sm:mx-0">
@@ -154,7 +154,7 @@ const Team = () => {
                       <div className="flex-grow text-center sm:text-left">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                           <div>
-                            <h3 className="text-base sm:text-lg font-bold text-gray-800">{member.name}</h3>
+                            <h3 className="text-base sm:text-lg font-bold text-foreground">{member.name}</h3>
                             <p className="text-primary font-medium text-sm">{member.title}</p>
                           </div>
                           <div className="hidden sm:block sm:text-right">
@@ -171,7 +171,7 @@ const Team = () => {
                           </span>
                         </div>
                         
-                        <p className="text-gray-600 text-xs sm:text-sm mt-2 sm:mt-3 line-clamp-2 sm:line-clamp-none">{member.bio}</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm mt-2 sm:mt-3 line-clamp-2 sm:line-clamp-none">{member.bio}</p>
                         
                         <div className="mt-3 sm:mt-4">
                           <Button 
@@ -208,7 +208,7 @@ const Team = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-xl overflow-hidden max-w-4xl mx-auto border border-gray-100 shadow-md"
+              className="bg-card rounded-xl overflow-hidden max-w-4xl mx-auto border border-border shadow-md"
             >
               <Button 
                 variant="ghost"
