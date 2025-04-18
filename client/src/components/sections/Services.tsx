@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { services } from "../../data/services";
 import { Badge } from "../../components/ui/badge";
 import { ChevronRight } from "lucide-react";
+import treatment_room1 from "@assets/20250417_200141.jpg";
+import treatment_room2 from "@assets/20250417_200153.jpg";
+import treatment_room3 from "@assets/20250417_200255.jpg";
+import treatment_room_wider from "@assets/IMG_20250415_205603.jpg";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0].id);
@@ -94,30 +98,18 @@ const Services = () => {
               >
                 <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-3 sm:mb-4">{serviceDetail.title}</h3>
 
-                <p className="text-sm sm:text-base text-muted-foreground mb-6">{serviceDetail.description}</p>
-                
-                <div className="bg-primary/5 rounded-lg p-4 mb-6 border border-primary/10">
-                  <h4 className="text-base font-medium text-primary mb-2">Benefits</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="h-5 w-5 text-primary mr-2 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      </span>
-                      <span className="text-sm text-muted-foreground">Reduce pain and improve mobility</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="h-5 w-5 text-primary mr-2 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      </span>
-                      <span className="text-sm text-muted-foreground">Personalized treatment plans</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="h-5 w-5 text-primary mr-2 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      </span>
-                      <span className="text-sm text-muted-foreground">Expert care from certified professionals</span>
-                    </li>
-                  </ul>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{serviceDetail.description}</p>
+
+                <div className="overflow-hidden rounded-lg max-h-[250px] sm:max-h-none">
+                  <img 
+                    src={
+                      serviceDetail.id === "chiropractic" ? treatment_room1 : 
+                      serviceDetail.id === "physiotherapy" ? treatment_room_wider : 
+                      serviceDetail.image
+                    } 
+                    alt={`${serviceDetail.title} at Endorphins Health and Wellness Centre`}
+                    className="w-full h-[250px] rounded-lg object-cover hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
 
                 <div className="mt-4 sm:mt-6 flex justify-end">

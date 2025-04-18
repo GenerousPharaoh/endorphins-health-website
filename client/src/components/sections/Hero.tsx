@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import clinic_logo from "@assets/20250417_200647.jpg";
+import { useEffect } from "react";
+import reception_area from "@assets/IMG_20250415_205609.jpg";
 
 const Hero = () => {
 
@@ -132,62 +133,33 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          {/* Right Column - Visual element */}
+          {/* Right Column - Image with enhanced styling */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="mt-6 sm:mt-8 lg:mt-0 relative"
+            className="mt-6 sm:mt-8 lg:mt-0 relative group"
           >
-            <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 p-8 h-full shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50"></div>
+            {/* Glowing border effect on hover */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-amber-500/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            
+            {/* Decorative corner elements */}
+            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-primary/70 rounded-tl-md"></div>
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-primary/70 rounded-br-md"></div>
+            
+            <div className="relative rounded-lg shadow-2xl overflow-hidden border border-border">
+              <img 
+                src={reception_area}
+                alt="Endorphins Health and Wellness Centre reception area" 
+                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Why Choose Endorphins?</h3>
-              
-              <div className="space-y-5">
-                <div className="flex items-start">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-3 text-primary flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Multidisciplinary Approach</h4>
-                    <p className="text-sm text-muted-foreground">Comprehensive treatment from a team of diverse specialists</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-3 text-primary flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Personalized Care</h4>
-                    <p className="text-sm text-muted-foreground">Treatment plans tailored to your specific needs</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center mr-3 text-primary flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12z"></path><path d="M12 10v4"></path><path d="M9 14h6"></path></svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Modern Facilities</h4>
-                    <p className="text-sm text-muted-foreground">Comfortable environment with state-of-the-art equipment</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <a 
-                  href="#booking" 
-                  className="inline-flex items-center px-4 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors shadow-md"
-                >
-                  <span className="font-medium">Book Today</span>
-                  <ChevronRight size={16} className="ml-2" />
-                </a>
-              </div>
-              
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-primary/5 rounded-full -mb-20 -mr-20 z-0"></div>
+              {/* Subtle overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-50"></div>
             </div>
+            
+            {/* Corner accent element */}
+            <div className="absolute -top-3 -right-3 w-12 h-12 bg-primary/80 rounded-full blur-xl opacity-40"></div>
           </motion.div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Twitter, Linkedin, MapPin, Phone, Mail, ChevronRight, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import clinic_logo from "@assets/20250417_200647.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,12 +35,8 @@ const Footer = () => {
           >
             <div>
               <div className="flex items-center mb-5">
-                <div className="h-10 w-10 rounded-full overflow-hidden flex items-center justify-center mr-3">
-                  <img 
-                    src={clinic_logo} 
-                    alt="Endorphins Health & Wellness Centre logo" 
-                    className="h-full w-full object-cover"
-                  />
+                <div className="h-10 w-10 bg-primary/20 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-primary font-bold text-lg">E</span>
                 </div>
                 <h3 className="text-white font-heading text-xl font-bold tracking-tight">Endorphins Health</h3>
               </div>

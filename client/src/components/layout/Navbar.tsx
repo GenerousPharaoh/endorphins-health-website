@@ -3,7 +3,6 @@ import { Link, useLocation } from "wouter";
 import { Button } from "../../components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, MapPin, Phone, Mail, Home as HomeIcon } from "lucide-react";
-import clinic_logo from "@assets/20250417_200647.jpg";
 
 // Helper function to check if a link is active
 const isActiveLink = (currentPath: string, linkPath: string): boolean => {
@@ -52,13 +51,11 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
-                  <div className="relative h-10 w-10 mr-3 overflow-hidden flex items-center justify-center group shadow-sm rounded-full">
-                    <img 
-                      src={clinic_logo} 
-                      alt="Endorphins Health & Wellness Centre logo" 
-                      className="h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative h-9 w-9 mr-3 bg-muted border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
+                    <span className="text-foreground font-bold text-xs">E</span>
+                    <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="flex flex-col leading-none">
                     <motion.div className="flex items-center">
