@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { services } from "../../data/services";
 import { Badge } from "../../components/ui/badge";
 import { ChevronRight } from "lucide-react";
+import treatment_room1 from "@assets/20250417_200141.jpg";
+import treatment_room2 from "@assets/20250417_200153.jpg";
+import treatment_room3 from "@assets/20250417_200255.jpg";
+import treatment_room_wider from "@assets/IMG_20250415_205603.jpg";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0].id);
@@ -96,15 +100,17 @@ const Services = () => {
 
                 <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{serviceDetail.description}</p>
 
-                <div className="overflow-hidden rounded-lg max-h-[200px] sm:max-h-none">
+                <div className="overflow-hidden rounded-lg max-h-[300px] sm:max-h-none">
                   <img 
-                    src={serviceDetail.id === "chiropractic" ? "https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/20250417_195908.jpg" : 
-                         serviceDetail.id === "athletic-therapy" ? "https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/IMG_20250415_205606.jpg" : 
-                         serviceDetail.image} 
-                    alt={serviceDetail.id === "chiropractic" ? "Endorphins Health and Wellness Centre treatment room" : 
-                         serviceDetail.id === "athletic-therapy" ? "Endorphins Health and Wellness Centre waiting area" : 
-                         serviceDetail.altText}
-                    className="w-full h-auto rounded-lg object-cover"
+                    src={
+                      serviceDetail.id === "chiropractic" ? treatment_room1 : 
+                      serviceDetail.id === "physiotherapy" ? treatment_room2 : 
+                      serviceDetail.id === "massage-therapy" ? treatment_room3 : 
+                      serviceDetail.id === "athletic-therapy" ? treatment_room_wider : 
+                      serviceDetail.image
+                    } 
+                    alt={`${serviceDetail.title} treatment room at Endorphins Health and Wellness Centre`}
+                    className="w-full h-[300px] rounded-lg object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 

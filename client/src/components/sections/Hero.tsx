@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { useEffect } from "react";
+import clinic_exterior from "@assets/20250417_200635.jpg";
+import reception_area from "@assets/IMG_20250415_205609.jpg";
 
 const Hero = () => {
   // Simple fade-in animation variants
@@ -147,9 +149,9 @@ const Hero = () => {
             
             <div className="relative rounded-lg shadow-2xl overflow-hidden border border-border">
               <img 
-                src="https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/IMG_20250415_205610.jpg" 
+                src={reception_area}
                 alt="Endorphins Health and Wellness Centre reception area" 
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
               />
               
               {/* Subtle overlay gradient */}
@@ -157,7 +159,7 @@ const Hero = () => {
               
               {/* Image caption */}
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
-                <p className="text-sm text-white/90 text-center font-medium">Professional healthcare in a welcoming environment</p>
+                <p className="text-sm text-white/90 text-center font-medium">Modern reception area at our Burlington location</p>
               </div>
             </div>
             

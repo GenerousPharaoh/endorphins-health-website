@@ -1,0 +1,101 @@
+Project Goal: Generate a complete, professional, SEO-optimized website for "Endorphins Health and Wellness Centre," based on the provided detailed content, and designed for a non-technical user to manage via natural language or a simple visual interface.
+
+Core Business Information:
+
+Clinic Name: Endorphins Health and Wellness Centre
+Description: A multi-specialty physical medicine outpatient wellness practice in Burlington. Founded by Dr. Ed Gray on the concept of providing integral care for the individual patient. (Use more details from the provided "About Endorphins" text).
+Primary Services: Chiropractic, Massage Therapy, Acupuncture, Physical Rehabilitation/Therapy, Muscle Testing, Concussion Management, Manual Release Therapy, Instrumented-Assisted Soft Tissue Therapy, Gait Analysis/Orthotic Casting, Laser Therapy, Electrotherapy, Nutritional Supplements. (Refined based on provided text)
+Target Audience: Residents of Burlington, Ontario, and surrounding areas seeking comprehensive pain management, injury rehabilitation, and wellness care.
+Location (Single Location): 4631 Palladium Way, Unit F, Burlington, ON, L7M 0W8
+Phone: (905) 634-6000
+Email: [email address removed] (Confirm or replace with actual email)
+Operating Hours: (Use previously suggested examples or preferably replace with actual hours)
+Monday: 9:00 AM - 6:00 PM
+Tuesday: 9:00 AM - 7:30 PM
+Wednesday: 9:00 AM - 7:00 PM
+Thursday: 9:00 AM - 7:30 PM
+Friday: 9:00 AM - 7:30 PM
+Saturday: 10:00 AM - 2:00 PM (By appointment)
+Sunday: Closed
+Brand Identity: Professional, modern, sleek, calming, trustworthy, community-focused (Burlington), emphasizing integral care, experience (20+ years), cutting-edge treatments, and a team approach. Use a colour palette reflecting wellness (soft blues, greens, neutrals).
+Website Structure & Content Generation:
+
+Homepage:
+
+Headline/Intro: Feature a welcoming message based on the "About Endorphins" text, emphasizing the clinic name, Burlington location, and the "integral care for the individual patient" concept. Mention being Dr. Owned and Operated for 20+ years serving Burlington.
+Mission Overview: Briefly introduce the mission using key phrases from "Our Mission at Endorphins" (holistic treatments, pain management, rehabilitation, wellness care, informed choice).
+Services Overview: Briefly list core service categories (e.g., Chiropractic, Massage Therapy, Physiotherapy/Rehab, Acupuncture) linking to detailed pages. Use language from "Our Integrated Treatments" emphasizing safe, effective, comprehensive care under one roof.
+Key Differentiators: Prominently feature the core values/strengths outlined:
+DR. OWNED AND OPERATED, 20+ YEARS SERVING BURLINGTON
+CUSTOMIZED CUTTING EDGE TREATMENTS & STATE OF THE ART EQUIPMENT
+ONE FOCUS, MANY EXPERTS (Team Approach)
+INTEGRAL TREATMENTS: PAIN RELIEF – REHABILITATION – WELLNESS (Non-invasive, Non-toxic, Non-surgical)
+Call-to-Actions (CTAs): Include clear buttons like "Book Appointment," "Explore Our Services," "Learn About Conditions We Treat," "Contact Us."
+Imagery: Use high-quality, relevant placeholder images (serene clinic interior, therapy examples, diverse healthy individuals).
+About Us Page (Dedicated Page Recommended):
+
+Use the full "About Endorphins – Burlington, ON" text provided.
+Expand on the "Our Mission at Endorphins" text.
+Detail the "Core Values / Strengths" using the provided bullet points (Dr. Owned, Customized Treatments, etc.) perhaps with icons.
+Include information about working closely with other healthcare providers (interdisciplinary care mentioned in the text).
+Services / Treatments Page(s):
+
+Main Services Page: Use the "Our Integrated Treatments" text to provide an overview of the clinic's approach to treatment (safe, effective, comprehensive, non-invasive, customized).
+Detailed Service Pages/Sections: Create dedicated pages or sections for each major service/technique listed under "Techniques & Services":
+Chiropractic
+Physical Therapy (Use this term if preferred over Physical Rehabilitation)
+Manual Release Therapy
+Acupuncture and Electroacupuncture
+Instrumented-Assisted Soft Tissue Therapy
+Gait Analysis and Orthotic Casting
+BioFlex and Omega Laser Therapy (Laser Therapy)
+Interferential Current and Ultrasound (Electrotherapy/Modalities)
+Thumper and Core Products Massagers (Mention under Massage or Manual Therapy)
+Pulsed Electromagnetic Wave Therapy (PEMF)
+Metagenics Nutritional Supplements (Nutritional Counselling/Supplements)
+(Consider adding Massage Therapy and Concussion Management as distinct pages if not covered)
+Content for Service Pages: Describe what each service entails, its benefits, and which conditions it typically addresses, drawing from the clinic's philosophy (non-invasive, rehab, wellness). Mention the state-of-the-art equipment where relevant.
+Conditions We Treat Page (Dedicated Page Recommended):
+
+Create a page specifically detailing the conditions treated.
+Use the headings and examples provided:
+Orthopedic Conditions (list examples: neck pain, back pain, etc.)
+Post Surgical Rehabilitation (list examples: arthroscopic, joint replacements, etc.)
+Sports Injury & Rehabilitation (list examples: ankle, back, etc., mention return-to-sport, concussion management)
+Neurological Conditions (list examples: stroke rehab, balance disorders, etc.)
+This page is highly valuable for SEO and helps patients find relevant information.
+Team Page:
+
+Use the introductory sentence provided: "Our team at Endorphins strives to treat your condition quickly, effectively, and completely while meeting and exceeding your goals and expectations."
+List the current staff (use names identified previously: Dr. Ed Gray, Dr. Jim Gilliard, Connie Collia-Kalpakis, Mena Porter, Ola Poplawski, Tyler Candlish, Antonietta Galati, Kareem Hassanein, Payton Wheatley - Confirm and update this list).
+Include placeholders for professional photos and short bios/specialties for each member. Mention they are highly trained chiropractors, massage therapists, acupuncturists (and others like RMT, PT, AT, Chiropodist as applicable). Emphasize the "One Focus, Many Experts" team approach.
+Contact Page:
+
+Display the full Name, Address, Phone Number (NAP) for the single Burlington location: 4631 Palladium Way, Unit F, Burlington, ON, L7M 0W8 | (905) 634-6000.
+Include the operating hours.
+Embed an interactive Google Map marker for the address.
+Generate a functional email contact form routing to the specified email (e.g., [email address removed]).
+Ensure NAP consistency in the website footer.
+Blog Section:
+
+Set up an integrated blog ("Endorphins Health Insights" or similar).
+Generate 2-3 initial draft blog post titles/outlines relevant to the detailed services and conditions (e.g., "How Laser Therapy Accelerates Healing," "Managing Arthritis Pain with Chiropractic Care in Burlington," "Acupuncture for Headache Relief").
+Ensure an intuitive interface for staff to add/edit posts.
+Design, UX, and Responsiveness:
+
+Apply a modern, clean, professional, calming design. Use the specified colour palette.
+Implement clear, intuitive navigation (e.g., Home, About Us, Services [dropdown], Conditions Treated, Team, Blog, Contact, Book Online).
+Ensure highly readable typography and good visual hierarchy.
+Use high-quality, licensed placeholder images relevant to the specific services offered and the clinic environment.
+CRITICAL: Ensure full responsiveness (mobile-first preferred) across all devices.
+Local SEO Optimization (Burlington Focus):
+
+Keyword Integration: Naturally integrate keywords related to the specific services, conditions, and location ("Burlington chiropractor," "physiotherapy Burlington L7M," "acupuncture for back pain Burlington," "sports injury rehab Burlington," "Endorphins Health and Wellness Centre," etc.) into Page Titles, Meta Descriptions, Headings, Body Content, and Image Alt Text.
+Schema Markup: Automatically implement LocalBusiness schema (or relevant subtype like MedicalClinic, Physiotherapy) for the single Burlington location. Include name, address, phone, hours, makesOffer for all primary services listed, areaServed (Burlington, possibly nearby areas), potentially link to medicalSpecialty where applicable.
+Google Business Profile Readiness: Ensure NAP is prominent and 100% consistent with the GBP listing. Structure content clearly (services, conditions) to align with GBP features.
+Interaction & Output:
+
+Generate the complete website based specifically on the detailed content provided.
+Output should be a functional website draft hosted (e.g., on Firebase Hosting preview).
+NO RAW CODE for the user.
+Allow easy editing/replacement of placeholder images, final confirmation of team details/hours/email, and text refinement via natural language or a simple visual editor.
