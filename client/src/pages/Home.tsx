@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
-import GoogleReviews from "../components/reviews/GoogleReviews";
+import Testimonials from "../components/sections/Testimonials";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -125,12 +125,7 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Google Reviews Section */}
-      <section className="py-16 sm:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <GoogleReviews />
-        </div>
-      </section>
+      <Testimonials />
     </div>
   );
 };
