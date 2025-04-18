@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -246,13 +247,21 @@ const Booking = () => {
                   )}
                 />
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-heading font-medium py-3 px-6 rounded-md transition-all"
-                  disabled={bookingMutation.isPending}
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {bookingMutation.isPending ? "Submitting..." : "Request Appointment"}
-                </Button>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-heading font-medium py-3 px-6 rounded-md transition-all relative overflow-hidden group"
+                    disabled={bookingMutation.isPending}
+                  >
+                    <span className="relative z-10">
+                      {bookingMutation.isPending ? "Submitting..." : "Request Appointment"}
+                    </span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </Button>
+                </motion.div>
               </form>
             </Form>
           </motion.div>
@@ -263,12 +272,16 @@ const Booking = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4 }}
           >
-            <div id="contact" className="bg-card rounded-lg p-8 shadow-md border border-border mb-8">
-              <h3 className="font-heading text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
+            <div id="contact" className="bg-card rounded-lg p-8 shadow-md border border-border mb-8 relative overflow-hidden">
+              {/* Subtle accent elements */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[60px]"></div>
+              <div className="relative z-10">
+                <h3 className="font-heading text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
               
               <div className="flex items-start mb-6">
-                <div className="text-primary text-xl mr-4 mt-1">
-                  <i className="fas fa-map-marker-alt"></i>
+                <div className="bg-primary/10 rounded-md p-2 text-primary mr-4 mt-1">
+                  <MapPin size={20} />
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Address</h4>
@@ -280,8 +293,8 @@ const Booking = () => {
               </div>
               
               <div className="flex items-start mb-6">
-                <div className="text-primary text-xl mr-4 mt-1">
-                  <i className="fas fa-phone"></i>
+                <div className="bg-primary/10 rounded-md p-2 text-primary mr-4 mt-1">
+                  <Phone size={20} />
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Phone</h4>
@@ -290,8 +303,8 @@ const Booking = () => {
               </div>
               
               <div className="flex items-start mb-6">
-                <div className="text-primary text-xl mr-4 mt-1">
-                  <i className="fas fa-envelope"></i>
+                <div className="bg-primary/10 rounded-md p-2 text-primary mr-4 mt-1">
+                  <Mail size={20} />
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Email</h4>
@@ -300,8 +313,8 @@ const Booking = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="text-primary text-xl mr-4 mt-1">
-                  <i className="fas fa-clock"></i>
+                <div className="bg-primary/10 rounded-md p-2 text-primary mr-4 mt-1">
+                  <Clock size={20} />
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Hours</h4>
@@ -310,9 +323,13 @@ const Booking = () => {
                   <p className="text-muted-foreground">Sunday: Closed</p>
                 </div>
               </div>
+              </div>
             </div>
             
-            <div className="bg-card/50 rounded-lg overflow-hidden h-80 shadow-md border border-border">
+            <div className="bg-card/50 rounded-lg overflow-hidden h-80 shadow-md border border-border relative">
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-primary/40 rounded-tl-md z-10"></div>
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-primary/40 rounded-br-md z-10"></div>
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.314048669502!2d-79.8311697847753!3d43.25909547913724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e8a7dcfd935%3A0xf9c6231fa2a27a0!2s4631%20Palladium%20Way%2C%20Burlington%2C%20ON%20L7M%200W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1652822836127!5m2!1sen!2sus" 
                 width="100%" 
