@@ -55,45 +55,45 @@ const ContactPage = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
+                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-gray-800 font-medium mb-1">Location</h3>
-                    <p className="text-gray-600">4631 Palladium Way (Unit 6)</p>
-                    <p className="text-gray-600">Burlington, Ontario</p>
+                    <h3 className="text-foreground font-medium mb-1">Location</h3>
+                    <p className="text-muted-foreground">4631 Palladium Way (Unit 6)</p>
+                    <p className="text-muted-foreground">Burlington, Ontario</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
+                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Phone className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-gray-800 font-medium mb-1">Phone</h3>
-                    <p className="text-gray-600">(905) 335-5300</p>
+                    <h3 className="text-foreground font-medium mb-1">Phone</h3>
+                    <p className="text-muted-foreground">(905) 335-5300</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
+                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Mail className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-gray-800 font-medium mb-1">Email</h3>
-                    <p className="text-gray-600">info@endorphins.ca</p>
+                    <h3 className="text-foreground font-medium mb-1">Email</h3>
+                    <p className="text-muted-foreground">info@endorphins.ca</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gray-100 p-3 rounded-lg mr-4">
+                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Clock className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-gray-800 font-medium mb-1">Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 8:00 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 5:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
+                    <h3 className="text-foreground font-medium mb-1">Hours</h3>
+                    <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 8:00 PM</p>
+                    <p className="text-muted-foreground">Saturday: 9:00 AM - 5:00 PM</p>
+                    <p className="text-muted-foreground">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const ContactPage = () => {
             </motion.div>
             
             <motion.div
-              className="relative h-[400px] rounded-xl overflow-hidden shadow-sm border border-gray-200"
+              className="relative h-[400px] rounded-xl overflow-hidden shadow-md border border-border"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
