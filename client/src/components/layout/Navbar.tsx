@@ -51,17 +51,12 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
-                  <img 
-                    src="/logo.jpg" 
-                    alt="Endorphins Logo" 
-                    className="h-12 w-12 mr-3 object-contain"
-                    onError={(e) => {
-                      console.error('Logo failed to load');
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null;
-                      target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%238bc34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>';
-                    }}
-                  />
+                  <div className="relative h-9 w-9 mr-3 bg-muted border-[3px] border-primary rounded-sm overflow-hidden flex items-center justify-center group shadow-sm">
+                    <span className="text-foreground font-bold text-xs">E</span>
+                    <div className="absolute top-[3px] left-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute bottom-[3px] right-[3px] h-1 w-1 bg-primary"></div>
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <div className="flex flex-col leading-none">
                     <motion.div className="flex items-center">
                       <motion.span 
