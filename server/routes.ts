@@ -6,23 +6,36 @@ import { z } from "zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { routesDebug, debugObj } from "./debug";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Booking endpoint
   app.post("/api/booking", async (req: Request, res: Response) => {
+    routesDebug('Received booking request');
+    debugObj(routesDebug, 'Request body', req.body);
+    
     try {
       const bookingData = insertBookingSchema.parse(req.body);
+      routesDebug('Booking data validated successfully');
+      
       const booking = await storage.createBooking(bookingData);
+      routesDebug('Booking created successfully');
+      debugObj(routesDebug, 'Created booking', booking);
+      
       res.status(201).json({ success: true, data: booking });
     } catch (error) {
       if (error instanceof ZodError) {
+        routesDebug('Validation error in booking request');
         const validationError = fromZodError(error);
+        debugObj(routesDebug, 'Validation errors', validationError.details);
+        
         res.status(400).json({ 
           success: false, 
           message: "Validation failed", 
           errors: validationError.details 
         });
       } else {
+        routesDebug('Unexpected error in booking request: %O', error);
         console.error("Booking error:", error);
         res.status(500).json({ 
           success: false, 
