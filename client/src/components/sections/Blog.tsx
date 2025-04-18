@@ -183,7 +183,7 @@ const BlogSection = () => {
 
         {filteredPosts.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gray-400">No articles found in this category.</p>
+            <p className="text-muted-foreground">No articles found in this category.</p>
           </div>
         )}
 

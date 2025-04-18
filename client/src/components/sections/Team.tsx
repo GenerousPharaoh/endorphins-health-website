@@ -158,7 +158,7 @@ const Team = () => {
                             <p className="text-primary font-medium text-sm">{member.title}</p>
                           </div>
                           <div className="hidden sm:block sm:text-right">
-                            <span className="inline-flex items-center bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+                            <span className="inline-flex items-center bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground">
                               {formatCategoryName(member.category)}
                             </span>
                           </div>
@@ -166,7 +166,7 @@ const Team = () => {
                         
                         {/* Mobile Category Badge */}
                         <div className="mt-2 mb-3 sm:hidden">
-                          <span className="inline-flex items-center bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700">
+                          <span className="inline-flex items-center bg-muted/60 px-2 py-0.5 text-xs font-medium text-muted-foreground">
                             {formatCategoryName(member.category)}
                           </span>
                         </div>
@@ -213,7 +213,7 @@ const Team = () => {
               <Button 
                 variant="ghost"
                 onClick={handleCloseProfile}
-                className="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 bg-white/90 hover:bg-white text-gray-700 rounded-full p-1.5 sm:p-2 h-auto shadow-sm"
+                className="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 bg-card/90 hover:bg-card text-foreground rounded-full p-1.5 sm:p-2 h-auto shadow-sm"
               >
                 <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
@@ -229,8 +229,8 @@ const Team = () => {
                     </h2>
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3">
                       <p className="text-primary font-medium text-sm sm:text-base">{activeMember.title}</p>
-                      <span className="hidden sm:inline-flex h-1 w-1 rounded-full bg-gray-400"></span>
-                      <Badge variant="outline" className="border-gray-200 text-gray-700 text-xs">
+                      <span className="hidden sm:inline-flex h-1 w-1 rounded-full bg-muted-foreground/50"></span>
+                      <Badge variant="outline" className="text-muted-foreground text-xs">
                         {formatCategoryName(activeMember.category)}
                       </Badge>
                     </div>
@@ -246,15 +246,15 @@ const Team = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">Contact Information</h3>
-                    <div className="p-3 sm:p-4 bg-gray-50 rounded-md border border-gray-100">
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2 sm:mb-3">Contact Information</h3>
+                    <div className="p-3 sm:p-4 bg-muted/50 rounded-md border border-border">
                       <div className="flex items-center mb-3">
                         <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3" />
-                        <span className="text-sm sm:text-base text-gray-600">contact@endorphins.health</span>
+                        <span className="text-sm sm:text-base text-muted-foreground">contact@endorphins.health</span>
                       </div>
                       <div className="flex items-center">
                         <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-3" />
-                        <span className="text-sm sm:text-base text-gray-600">(905) 555-1234</span>
+                        <span className="text-sm sm:text-base text-muted-foreground">(905) 555-1234</span>
                       </div>
                     </div>
                   </div>
