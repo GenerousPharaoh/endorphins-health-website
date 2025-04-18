@@ -98,11 +98,11 @@ const Services = () => {
 
                 <div className="overflow-hidden rounded-lg max-h-[200px] sm:max-h-none">
                   <img 
-                    src={serviceDetail.id === "chiropractic" ? "/images/treatment-room.jpg" : 
-                         serviceDetail.id === "athletic-therapy" ? "/images/waiting-area.jpg" : 
+                    src={serviceDetail.id === "chiropractic" ? "https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/20250417_195908.jpg" : 
+                         serviceDetail.id === "athletic-therapy" ? "https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/IMG_20250415_205606.jpg" : 
                          serviceDetail.image} 
-                    alt={serviceDetail.id === "chiropractic" ? "Endorphins treatment room" : 
-                         serviceDetail.id === "athletic-therapy" ? "Endorphins waiting area" : 
+                    alt={serviceDetail.id === "chiropractic" ? "Endorphins Health and Wellness Centre treatment room" : 
+                         serviceDetail.id === "athletic-therapy" ? "Endorphins Health and Wellness Centre waiting area" : 
                          serviceDetail.altText}
                     className="w-full h-auto rounded-lg object-cover"
                   />

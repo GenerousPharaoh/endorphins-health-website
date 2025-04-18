@@ -55,8 +55,8 @@ const About = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Endorphins Health and Wellness Centre reception" 
+                src="https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/20250417_200635.jpg" 
+                alt="Endorphins Health and Wellness Centre exterior" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover border border-border group-hover:border-primary/50 transition-colors duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-lg opacity-20 group-hover:opacity-0 transition-opacity duration-300"></div>
