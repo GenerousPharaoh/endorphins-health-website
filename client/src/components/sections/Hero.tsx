@@ -10,7 +10,18 @@ const Hero = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.4 }
+    }
+  };
+  
+  const stagger = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
     }
   };
 
@@ -60,56 +71,71 @@ const Hero = () => {
               Endorphins Health and Wellness Centre offers multidisciplinary healthcare services to help you achieve optimal health and performance.
             </p>
             
-            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-10">
-              <Button 
-                size="lg"
-                asChild
-                className="bg-primary hover:bg-primary/90 text-white"
-              >
-                <a href="#booking" className="flex items-center">
-                  Book Appointment
-                  <motion.span
-                    animate={{ x: [0, 3, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="ml-2"
-                  >
-                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </motion.span>
-                </a>
-              </Button>
+            <motion.div 
+              className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-10"
+              variants={stagger}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={fadeIn}>
+                <Button 
+                  size="lg"
+                  asChild
+                  className="bg-primary hover:bg-primary/90 text-white"
+                >
+                  <a href="#booking" className="flex items-center">
+                    Book Appointment
+                    <motion.span
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                      className="ml-2"
+                    >
+                      <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </motion.span>
+                  </a>
+                </Button>
+              </motion.div>
               
-              <Button 
-                size="lg"
-                variant="outline"
-                asChild
-                className="border-primary/50 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
-              >
-                <a href="#services" className="flex items-center">
-                  Our Services
-                  <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-              </Button>
-            </div>
+              <motion.div variants={fadeIn}>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="border-primary/50 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                >
+                  <a href="#services" className="flex items-center">
+                    Our Services
+                    <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  </a>
+                </Button>
+              </motion.div>
+            </motion.div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 text-left">
+            <motion.div 
+              className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 text-left"
+              variants={stagger}
+              initial="hidden"
+              animate="visible"
+            >
               {services.map((service) => (
-                <a
+                <motion.a
                   key={service.name}
                   href={service.link}
                   className="text-muted-foreground hover:text-primary flex items-center text-xs sm:text-sm font-medium transition-colors duration-200"
+                  variants={fadeIn}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                   {service.name}
-                </a>
+                </motion.a>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
           
           {/* Right Column - Image with enhanced styling */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="mt-6 sm:mt-8 lg:mt-0 relative group"
           >
             {/* Glowing border effect on hover */}

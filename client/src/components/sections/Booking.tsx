@@ -86,8 +86,8 @@ const Booking = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4 }}
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">Book Your Appointment</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -99,8 +99,8 @@ const Booking = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4 }}
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="bg-card rounded-lg p-8 shadow-md border border-border">
@@ -260,8 +260,8 @@ const Booking = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4 }}
           >
             <div id="contact" className="bg-card rounded-lg p-8 shadow-md border border-border mb-8">
               <h3 className="font-heading text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
