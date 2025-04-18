@@ -52,9 +52,15 @@ const Navbar = () => {
               <Link href="/" className="flex items-center">
                 <div className="flex items-center">
                   <img 
-                    src="/images/logo.jpg" 
+                    src="/logo.jpg" 
                     alt="Endorphins Logo" 
-                    className="h-10 w-10 mr-3 rounded-full shadow-sm"
+                    className="h-12 w-12 mr-3 object-contain"
+                    onError={(e) => {
+                      console.error('Logo failed to load');
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%238bc34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>';
+                    }}
                   />
                   <div className="flex flex-col leading-none">
                     <motion.div className="flex items-center">
