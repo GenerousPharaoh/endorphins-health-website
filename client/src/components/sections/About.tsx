@@ -48,8 +48,8 @@ const About = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4 }}
             className="relative group"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
@@ -66,8 +66,8 @@ const About = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="text-foreground"
           >
             <div className="space-y-6">
@@ -75,8 +75,8 @@ const About = () => {
                 className="text-lg text-card-foreground leading-relaxed" 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.3, delay: 0.15 }}
               >
                 Located in Burlington, Ontario, we are a multidisciplinary clinic offering a comprehensive range of health services. Our team of qualified professionals is dedicated to providing personalized care to help you achieve your health goals.
               </motion.p>
@@ -85,8 +85,8 @@ const About = () => {
                 className="text-muted-foreground mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.3, delay: 0.2 }}
               >
                 Whether you're recovering from an injury, managing chronic pain, or seeking to improve your overall wellness, our integrated approach ensures you receive the highest standard of care in a comfortable, modern environment.
               </motion.p>
@@ -97,8 +97,8 @@ const About = () => {
                   className="space-y-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.3, delay: 0.25 }}
                 >
                   <div className="flex items-center group">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3 group-hover:bg-primary/20 transition-colors duration-300">

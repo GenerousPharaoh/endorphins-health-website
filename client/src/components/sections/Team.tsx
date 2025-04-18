@@ -69,7 +69,7 @@ const Team = () => {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
         >
           <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Our Specialists</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -143,7 +143,7 @@ const Team = () => {
                     key={member.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    transition={{ duration: 0.3, delay: 0.05 * index }}
                     className="group border-b border-border last:border-b-0 hover:bg-muted/50"
                   >
                     <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 relative overflow-hidden">
