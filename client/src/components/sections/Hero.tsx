@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import reception_area from "@assets/IMG_20250415_205609.jpg";
 
 const Hero = () => {

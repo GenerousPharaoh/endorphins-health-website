@@ -57,12 +57,32 @@ const Team = () => {
   const [viewingGallery, setViewingGallery] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState('');
   
-  // Curated selection of clinic photos
+  // Curated selection of clinic photos with meaningful descriptions
   const clinicPhotos = [
-    { src: reception_area, alt: "Main reception desk", title: "Reception" },
-    { src: waiting_area, alt: "Patient waiting area", title: "Waiting Area" },
-    { src: treatment_room1, alt: "Treatment room", title: "Treatment Room" },
-    { src: hallway_art, alt: "Interior design details", title: "Hallway" }
+    { 
+      src: reception_area, 
+      alt: "Welcoming reception area at Endorphins Health and Wellness Centre", 
+      title: "Reception Area",
+      description: "Our bright, welcoming reception area where your wellness journey begins"
+    },
+    { 
+      src: waiting_area, 
+      alt: "Comfortable patient waiting area", 
+      title: "Waiting Lounge",
+      description: "A relaxing space designed for your comfort before appointments"
+    },
+    { 
+      src: treatment_room1, 
+      alt: "Professional treatment room with modern equipment", 
+      title: "Treatment Suite",
+      description: "Equipped with state-of-the-art technology for your therapeutic needs"
+    },
+    { 
+      src: hallway_art, 
+      alt: "Thoughtfully designed interior with calming elements", 
+      title: "Healing Environment",
+      description: "Our clinic spaces are designed to promote tranquility and healing"
+    }
   ];
   
   const openPhotoViewer = (src: string) => {
