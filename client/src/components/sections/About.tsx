@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import clinic_exterior from "@assets/20250417_200635.jpg";
-import clinic_logo from "@assets/20250417_200647.jpg";
+import clinic_exterior from "@assets/20250417_195919.jpg";
 
 const About = () => {
   return (
