@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import clinic_exterior from "@assets/20250417_195919.jpg";
 
 const About = () => {
   return (
@@ -56,7 +55,7 @@ const About = () => {
             {/* Simple, clean professional image presentation */}
             <div className="relative overflow-hidden rounded-lg shadow-lg border border-border">
               <img 
-                src={clinic_exterior} 
+                src="/exterior-photo.jpeg" 
                 alt="Endorphins Health and Wellness Centre exterior" 
                 className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
               />
