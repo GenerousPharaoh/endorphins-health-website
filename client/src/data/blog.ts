@@ -44,8 +44,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-03-15',
     readTime: 5,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    altText: 'Chiropractor adjusting patient\'s spine'
+    image: 'https://images.unsplash.com/photo-1629476509194-cc5c3f2f0365?auto=format&fit=crop&w=1200&q=80',
+    altText: 'Chiropractic adjustment table in a modern wellness center'
   },
   {
     id: 'stretches-for-desk-workers',
@@ -77,8 +77,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-03-02',
     readTime: 4,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    altText: 'Person doing a desk stretch at workspace'
+    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=1200&q=80',
+    altText: 'Modern ergonomic office workspace setup'
   },
   {
     id: 'massage-therapy-benefits',
@@ -133,8 +133,8 @@ export const blogPosts: BlogPost[] = [
     date: '2025-02-18',
     readTime: 6,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    altText: 'Massage therapist performing therapeutic massage'
+    image: 'https://images.unsplash.com/photo-1620733723572-11c53f73a416?auto=format&fit=crop&w=1200&q=80',
+    altText: 'Massage therapy room with essential oils and stones'
   },
   {
     id: 'nutrition-for-recovery',

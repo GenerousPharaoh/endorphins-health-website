@@ -13,7 +13,7 @@ export const teamMembers: TeamMember[] = [
     name: "Sarah Johnson",
     title: "Doctor of Chiropractic",
     bio: "Sarah specializes in sports injuries and rehabilitation with over 10 years of experience helping patients achieve optimal spinal health.",
-    image: "/placeholder",
+    image: "spine",
     category: "chiropractic"
   },
   {
@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
     name: "Michael Chen",
     title: "Doctor of Chiropractic",
     bio: "Michael focuses on holistic approaches to chiropractic care, integrating nutrition and lifestyle counseling with traditional adjustments.",
-    image: "/placeholder",
+    image: "holistic",
     category: "chiropractic"
   },
   {
@@ -29,7 +29,7 @@ export const teamMembers: TeamMember[] = [
     name: "Emma Rodriguez",
     title: "Senior Physiotherapist",
     bio: "Emma specializes in orthopedic physiotherapy and post-surgical rehabilitation, helping patients return to their daily activities quickly and safely.",
-    image: "/placeholder",
+    image: "orthopedic",
     category: "physiotherapy"
   },
   {
@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
     name: "David Wilson",
     title: "Physiotherapist",
     bio: "David focuses on chronic pain management and specialized exercise programs, helping patients build strength and mobility for long-term health.",
-    image: "/placeholder",
+    image: "exercise",
     category: "physiotherapy"
   },
   {
@@ -45,7 +45,7 @@ export const teamMembers: TeamMember[] = [
     name: "Olivia Thompson",
     title: "Registered Massage Therapist",
     bio: "Olivia specializes in deep tissue and sports massage, helping athletes and active individuals recover and perform at their best.",
-    image: "/placeholder",
+    image: "massage",
     category: "massage-therapy"
   },
   {
@@ -53,7 +53,7 @@ export const teamMembers: TeamMember[] = [
     name: "James Lee",
     title: "Registered Massage Therapist",
     bio: "James specializes in relaxation and therapeutic massage, focusing on stress reduction and overall wellness for his clients.",
-    image: "/placeholder",
+    image: "relaxation",
     category: "massage-therapy"
   },
   {
@@ -61,7 +61,7 @@ export const teamMembers: TeamMember[] = [
     name: "Alex Mitchell",
     title: "Athletic Therapist",
     bio: "Alex specializes in sports-related injuries and rehabilitation for athletes of all levels, helping them return to peak performance safely and effectively.",
-    image: "/placeholder",
+    image: "athletic",
     category: "athletic-therapy"
   },
   {
@@ -69,7 +69,7 @@ export const teamMembers: TeamMember[] = [
     name: "Sophia Patel",
     title: "Certified Athletic Therapist",
     bio: "Sophia combines strength training and therapeutic techniques to treat sports injuries and enhance athletic performance for competitive and recreational athletes.",
-    image: "/placeholder",
+    image: "strength",
     category: "athletic-therapy"
   },
   {
@@ -77,7 +77,7 @@ export const teamMembers: TeamMember[] = [
     name: "Daniel Rivera",
     title: "Chiropodist",
     bio: "Daniel specializes in diagnosing and treating conditions of the foot and ankle, offering comprehensive foot care for patients of all ages.",
-    image: "/placeholder",
+    image: "foot",
     category: "chiropody"
   },
   {
@@ -85,7 +85,7 @@ export const teamMembers: TeamMember[] = [
     name: "Rachel Kim",
     title: "Registered Chiropodist",
     bio: "Rachel provides expert foot care including nail surgery, custom orthotics, and diabetic foot assessments to help patients maintain optimal foot health.",
-    image: "/placeholder",
+    image: "orthotic",
     category: "chiropody"
   }
 ];
