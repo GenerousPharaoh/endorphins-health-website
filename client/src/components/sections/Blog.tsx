@@ -45,14 +45,14 @@ const BlogSection = () => {
   };
 
   return (
-    <section id="blog" className="py-20 bg-gray-950">
+    <section id="blog" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Badge className="bg-primary/10 text-primary mb-3">Health Insights</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Latest Articles & Tips
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-400">
+          <p className="max-w-2xl mx-auto text-muted-foreground">
             Expert advice, health tips, and wellness information from our specialists to help you live your best life.
           </p>
         </div>
@@ -65,7 +65,7 @@ const BlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-2 gap-6 bg-gray-900 rounded-xl overflow-hidden"
+              className="grid md:grid-cols-2 gap-6 bg-card rounded-xl overflow-hidden border border-border shadow-md"
             >
               <div className="relative h-64 md:h-full overflow-hidden">
                 <img 
@@ -82,14 +82,14 @@ const BlogSection = () => {
               </div>
               <div className="p-6 md:p-8 flex flex-col justify-between">
                 <div>
-                  <Badge variant="outline" className="mb-3 text-white/70 border-white/20">Featured</Badge>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                  <Badge variant="outline" className="mb-3 text-foreground/70 border-border">Featured</Badge>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
                     {featuredPosts[0].title}
                   </h3>
-                  <p className="text-gray-400 mb-4">
+                  <p className="text-muted-foreground mb-4">
                     {featuredPosts[0].excerpt}
                   </p>
-                  <div className="flex items-center text-sm text-gray-500 mt-2 space-x-4">
+                  <div className="flex items-center text-sm text-muted-foreground mt-2 space-x-4">
                     <div className="flex items-center">
                       <Calendar size={14} className="mr-1 text-primary" />
                       <span>{formatDate(featuredPosts[0].date)}</span>
@@ -123,7 +123,7 @@ const BlogSection = () => {
               className={`cursor-pointer py-2 px-4 text-sm ${
                 selectedCategory === category.value 
                   ? "bg-primary text-primary-foreground" 
-                  : "bg-transparent hover:bg-gray-800 text-gray-400 border-gray-700"
+                  : "bg-transparent hover:bg-muted text-muted-foreground border-border"
               }`}
               onClick={() => setSelectedCategory(category.value)}
             >
@@ -142,7 +142,7 @@ const BlogSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="bg-gray-900 border-gray-800 overflow-hidden h-full flex flex-col">
+              <Card className="bg-card border-border overflow-hidden h-full flex flex-col shadow-md hover:shadow-lg transition-all duration-300">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={post.image} 
@@ -156,13 +156,13 @@ const BlogSection = () => {
                   </div>
                 </div>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-lg font-bold text-white">{post.title}</CardTitle>
+                  <CardTitle className="text-lg font-bold text-card-foreground">{post.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-gray-400 text-sm flex-grow">
+                <CardContent className="text-muted-foreground text-sm flex-grow">
                   <p>{post.excerpt}</p>
                 </CardContent>
                 <CardFooter className="flex justify-between items-center pt-0 pb-4">
-                  <div className="flex items-center text-xs text-gray-500 space-x-3">
+                  <div className="flex items-center text-xs text-muted-foreground space-x-3">
                     <div className="flex items-center">
                       <Calendar size={12} className="mr-1 text-primary" />
                       <span>{formatDate(post.date)}</span>
