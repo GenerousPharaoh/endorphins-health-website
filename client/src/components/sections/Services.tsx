@@ -100,17 +100,15 @@ const Services = () => {
 
                 <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{serviceDetail.description}</p>
 
-                <div className="overflow-hidden rounded-lg max-h-[300px] sm:max-h-none">
+                <div className="overflow-hidden rounded-lg max-h-[250px] sm:max-h-none">
                   <img 
                     src={
                       serviceDetail.id === "chiropractic" ? treatment_room1 : 
-                      serviceDetail.id === "physiotherapy" ? treatment_room2 : 
-                      serviceDetail.id === "massage-therapy" ? treatment_room3 : 
-                      serviceDetail.id === "athletic-therapy" ? treatment_room_wider : 
+                      serviceDetail.id === "physiotherapy" ? treatment_room_wider : 
                       serviceDetail.image
                     } 
-                    alt={`${serviceDetail.title} treatment room at Endorphins Health and Wellness Centre`}
-                    className="w-full h-[300px] rounded-lg object-cover hover:scale-105 transition-transform duration-700"
+                    alt={`${serviceDetail.title} at Endorphins Health and Wellness Centre`}
+                    className="w-full h-[250px] rounded-lg object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 

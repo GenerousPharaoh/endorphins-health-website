@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useState, useCallback } from "react";
-import clinic_exterior from "@assets/20250417_200635.jpg";
+import { useEffect } from "react";
 import reception_area from "@assets/IMG_20250415_205609.jpg";
-import waiting_area from "@assets/IMG_20250415_205604.jpg";
-import hallway_art from "@assets/IMG_20250415_205556.jpg";
 
 const Hero = () => {
+
   // Simple fade-in animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -157,12 +155,7 @@ const Hero = () => {
               />
               
               {/* Subtle overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-              
-              {/* Image caption */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
-                <p className="text-sm text-white/90 text-center font-medium">Modern reception area at our Burlington location</p>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-50"></div>
             </div>
             
             {/* Corner accent element */}

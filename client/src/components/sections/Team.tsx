@@ -57,15 +57,12 @@ const Team = () => {
   const [viewingGallery, setViewingGallery] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState('');
   
-  // Clinic photos for gallery
+  // Curated selection of clinic photos
   const clinicPhotos = [
-    { src: treatment_room1, alt: "Treatment room with adjustable table", title: "Chiropractic Treatment Room" },
-    { src: treatment_room2, alt: "Modern treatment room with mirror", title: "Physiotherapy Treatment Room" },
-    { src: treatment_room3, alt: "Advanced treatment table", title: "Athletic Therapy Room" },
-    { src: treatment_room_wider, alt: "Spacious treatment room", title: "Massage Therapy Room" },
-    { src: reception_area, alt: "Modern reception desk", title: "Reception Area" },
-    { src: waiting_area, alt: "Comfortable waiting area", title: "Waiting Lounge" },
-    { src: hallway_art, alt: "Hallway with artwork", title: "Wellness Gallery" }
+    { src: reception_area, alt: "Main reception desk", title: "Reception" },
+    { src: waiting_area, alt: "Patient waiting area", title: "Waiting Area" },
+    { src: treatment_room1, alt: "Treatment room", title: "Treatment Room" },
+    { src: hallway_art, alt: "Interior design details", title: "Hallway" }
   ];
   
   const openPhotoViewer = (src: string) => {
@@ -326,12 +323,12 @@ const Team = () => {
           transition={{ duration: 0.4 }}
         >
           <div className="text-center mb-10">
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Our Facility</Badge>
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Photo Gallery</Badge>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Take a Tour of Our <span className="text-primary">Modern Clinic</span>
+              <span className="text-primary">Endorphins</span> Facility
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
-              Our state-of-the-art facility is designed to provide a comfortable and healing environment for all our patients.
+              Experience our comfortable Burlington clinic, designed with your wellbeing in mind.
             </p>
           </div>
           
@@ -354,10 +351,9 @@ const Team = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white text-lg font-medium">{photo.title}</h3>
-                  <p className="text-white/80 text-sm">{photo.alt}</p>
                   <div className="mt-2 flex items-center">
                     <Camera className="w-4 h-4 text-primary mr-1" />
-                    <span className="text-white/90 text-xs">Click to enlarge</span>
+                    <span className="text-white/90 text-xs">View</span>
                   </div>
                 </div>
               </motion.div>
