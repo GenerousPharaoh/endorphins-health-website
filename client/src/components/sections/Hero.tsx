@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import clinic_logo from "@assets/20250417_200647.jpg";
 
 const Hero = () => {
 

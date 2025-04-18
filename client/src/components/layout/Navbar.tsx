@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "../../components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, MapPin, Phone, Mail, Home as HomeIcon } from "lucide-react";
+import clinic_logo from "@assets/20250417_200647.jpg";
 
 // Helper function to check if a link is active
 const isActiveLink = (currentPath: string, linkPath: string): boolean => {
