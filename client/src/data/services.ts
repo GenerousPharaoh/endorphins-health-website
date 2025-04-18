@@ -21,7 +21,7 @@ export const services: Service[] = [
     title: "Physiotherapy",
     description: "Our physiotherapists work with you to restore movement and function after injury, illness, or disability through exercise, manual therapy, and education.",
     icon: "P",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1573871669414-010dbaf28a61?auto=format&fit=crop&w=800&q=80",
     altText: "Physiotherapy equipment"
   },
   {
@@ -29,7 +29,7 @@ export const services: Service[] = [
     title: "Athletic Therapy",
     description: "Our athletic therapists specialize in the prevention, assessment, and rehabilitation of musculoskeletal injuries, particularly for active individuals.",
     icon: "A",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1527933053326-89d1746b76b9?auto=format&fit=crop&w=800&q=80",
     altText: "Sports therapy equipment"
   },
   {
@@ -37,7 +37,7 @@ export const services: Service[] = [
     title: "Massage Therapy",
     description: "Our registered massage therapists use various techniques to reduce stress, improve circulation, relieve tension, and promote overall wellness.",
     icon: "M",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1532398155617-17047aeccf08?auto=format&fit=crop&w=800&q=80",
     altText: "Massage therapy stones and oils"
   },
   {

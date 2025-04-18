@@ -147,8 +147,8 @@ const Hero = () => {
             
             <div className="relative rounded-lg shadow-2xl overflow-hidden border border-border">
               <img 
-                src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80" 
-                alt="Modern medical facility at Endorphins Health and Wellness Centre" 
+                src="/images/reception.jpg" 
+                alt="Endorphins Health and Wellness Centre reception area" 
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
               

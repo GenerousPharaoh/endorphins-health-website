@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-02-10',
     readTime: 7,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80',
     altText: 'Healthy food for recovery and healing'
   }
 ];

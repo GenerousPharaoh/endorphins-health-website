@@ -98,8 +98,12 @@ const Services = () => {
 
                 <div className="overflow-hidden rounded-lg max-h-[200px] sm:max-h-none">
                   <img 
-                    src={serviceDetail.image} 
-                    alt={serviceDetail.altText}
+                    src={serviceDetail.id === "chiropractic" ? "/images/treatment-room.jpg" : 
+                         serviceDetail.id === "athletic-therapy" ? "/images/waiting-area.jpg" : 
+                         serviceDetail.image} 
+                    alt={serviceDetail.id === "chiropractic" ? "Endorphins treatment room" : 
+                         serviceDetail.id === "athletic-therapy" ? "Endorphins waiting area" : 
+                         serviceDetail.altText}
                     className="w-full h-auto rounded-lg object-cover"
                   />
                 </div>
