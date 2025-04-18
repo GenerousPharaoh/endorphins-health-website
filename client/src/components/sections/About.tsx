@@ -55,14 +55,10 @@ const About = () => {
             {/* Simple, clean professional image presentation */}
             <div className="relative overflow-hidden rounded-lg shadow-lg border border-border">
               <img 
-                src="/endorphins-exterior.jpeg"
+                src="/clinic-exterior.jpeg"
                 alt="Endorphins Health and Wellness Centre exterior" 
                 className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
                 style={{ minHeight: "300px", maxHeight: "500px" }}
-                onError={(e) => {
-                  console.error("Image failed to load");
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80";
-                }}
               />
             </div>
           </motion.div>
