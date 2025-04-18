@@ -59,6 +59,22 @@ const About = () => {
                 alt="Endorphins Health and Wellness Centre exterior" 
                 className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
                 style={{ minHeight: "300px", maxHeight: "500px" }}
+                onError={(e) => {
+                  console.error("Image failed to load:", e);
+                  const imgElement = e.currentTarget;
+                  // Try alternative paths if the main one fails
+                  if (imgElement.src.includes('clinic-exterior.jpeg')) {
+                    imgElement.src = "/exterior-photo.jpeg";
+                  } else if (imgElement.src.includes('exterior-photo.jpeg')) {
+                    imgElement.src = "/clinic-exterior-new.png";
+                  } else {
+                    // Final fallback to a solid color placeholder
+                    imgElement.style.backgroundColor = "#f0f0f0";
+                    imgElement.style.display = "flex";
+                    imgElement.style.alignItems = "center";
+                    imgElement.style.justifyContent = "center";
+                  }
+                }}
               />
             </div>
           </motion.div>
