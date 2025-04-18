@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import clinic_exterior from "@assets/20250417_200635.jpg";
+import clinic_logo from "@assets/20250417_200647.jpg";
 
 const About = () => {
   return (
@@ -55,10 +57,23 @@ const About = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative">
               <img 
-                src="https://raw.githubusercontent.com/replit/endorphins-health-and-wellness/main/attached_assets/20250417_200635.jpg" 
+                src={clinic_exterior} 
                 alt="Endorphins Health and Wellness Centre exterior" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover border border-border group-hover:border-primary/50 transition-colors duration-300"
               />
+              <motion.div 
+                className="absolute -bottom-4 -right-4 w-20 h-20 bg-white p-1 rounded-lg shadow-lg overflow-hidden z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8, duration: 0.3 }}
+              >
+                <img 
+                  src={clinic_logo}
+                  alt="Endorphins logo"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-lg opacity-20 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
           </motion.div>

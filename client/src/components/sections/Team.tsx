@@ -1,9 +1,16 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { teamMembers } from "../../data/team";
-import { ArrowLeft, ArrowRight, Mail, Phone, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail, Phone, User, Camera } from "lucide-react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
+import treatment_room1 from "@assets/20250417_200141.jpg";
+import treatment_room2 from "@assets/20250417_200153.jpg";
+import treatment_room3 from "@assets/20250417_200255.jpg";
+import treatment_room_wider from "@assets/IMG_20250415_205603.jpg";
+import reception_area from "@assets/IMG_20250415_205609.jpg";
+import waiting_area from "@assets/IMG_20250415_205604.jpg";
+import hallway_art from "@assets/IMG_20250415_205556.jpg";
 
 const Team = () => {
   // Create a group of team members by category
@@ -44,6 +51,31 @@ const Team = () => {
       .split("-")
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
+  };
+
+  // State for photo gallery
+  const [viewingGallery, setViewingGallery] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState('');
+  
+  // Clinic photos for gallery
+  const clinicPhotos = [
+    { src: treatment_room1, alt: "Treatment room with adjustable table", title: "Chiropractic Treatment Room" },
+    { src: treatment_room2, alt: "Modern treatment room with mirror", title: "Physiotherapy Treatment Room" },
+    { src: treatment_room3, alt: "Advanced treatment table", title: "Athletic Therapy Room" },
+    { src: treatment_room_wider, alt: "Spacious treatment room", title: "Massage Therapy Room" },
+    { src: reception_area, alt: "Modern reception desk", title: "Reception Area" },
+    { src: waiting_area, alt: "Comfortable waiting area", title: "Waiting Lounge" },
+    { src: hallway_art, alt: "Hallway with artwork", title: "Wellness Gallery" }
+  ];
+  
+  const openPhotoViewer = (src: string) => {
+    setSelectedPhoto(src);
+    setViewingGallery(true);
+  };
+  
+  const closePhotoViewer = () => {
+    setViewingGallery(false);
+    setSelectedPhoto('');
   };
 
   return (
@@ -281,6 +313,88 @@ const Team = () => {
                   </div>
                 </div>
               </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Clinic Photo Gallery */}
+        <motion.div 
+          className="mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.4 }}
+        >
+          <div className="text-center mb-10">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 mb-3">Our Facility</Badge>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Take a Tour of Our <span className="text-primary">Modern Clinic</span>
+            </h2>
+            <p className="max-w-2xl mx-auto text-muted-foreground">
+              Our state-of-the-art facility is designed to provide a comfortable and healing environment for all our patients.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {clinicPhotos.map((photo, index) => (
+              <motion.div
+                key={index}
+                className="relative group cursor-pointer rounded-lg overflow-hidden shadow-md border border-border h-64"
+                onClick={() => openPhotoViewer(photo.src)}
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.3, delay: 0.1 * index }}
+              >
+                <img 
+                  src={photo.src} 
+                  alt={photo.alt} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                  <h3 className="text-white text-lg font-medium">{photo.title}</h3>
+                  <p className="text-white/80 text-sm">{photo.alt}</p>
+                  <div className="mt-2 flex items-center">
+                    <Camera className="w-4 h-4 text-primary mr-1" />
+                    <span className="text-white/90 text-xs">Click to enlarge</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Fullscreen Photo Viewer */}
+        <AnimatePresence>
+          {viewingGallery && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              onClick={closePhotoViewer}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25 }}
+                className="relative max-w-5xl max-h-[80vh] overflow-hidden rounded-lg"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={selectedPhoto} 
+                  alt="Enlarged clinic view" 
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                />
+                <Button
+                  onClick={closePhotoViewer}
+                  className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 h-auto"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </Button>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import clinic_exterior from "@assets/20250417_200635.jpg";
 import reception_area from "@assets/IMG_20250415_205609.jpg";
+import waiting_area from "@assets/IMG_20250415_205604.jpg";
+import hallway_art from "@assets/IMG_20250415_205556.jpg";
 
 const Hero = () => {
   // Simple fade-in animation variants
