@@ -165,7 +165,7 @@ const Booking = () => {
                   name="service"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Service</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Service</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
@@ -191,7 +191,7 @@ const Booking = () => {
                   name="date"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Preferred Date</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Preferred Date</FormLabel>
                       <FormControl>
                         <Input 
                           type="date" 
@@ -209,7 +209,7 @@ const Booking = () => {
                   name="time"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Preferred Time</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Preferred Time</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
@@ -232,7 +232,7 @@ const Booking = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Additional Information</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Additional Information</FormLabel>
                       <FormControl>
                         <Textarea 
                           rows={4} 
@@ -263,7 +263,7 @@ const Booking = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div id="contact" className="bg-gray-50 rounded-lg p-8 shadow-md mb-8">
+            <div id="contact" className="bg-card rounded-lg p-8 shadow-md border border-border mb-8">
               <h3 className="font-heading text-2xl font-bold mb-6 text-foreground">Contact Information</h3>
               
               <div className="flex items-start mb-6">
@@ -272,7 +272,7 @@ const Booking = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Address</h4>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     4631 Palladium Way (Unit 6)<br />
                     Burlington, ON
                   </p>
@@ -285,7 +285,7 @@ const Booking = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Phone</h4>
-                  <p className="text-gray-600">(905) 555-1234</p>
+                  <p className="text-muted-foreground">(905) 555-1234</p>
                 </div>
               </div>
               
@@ -295,7 +295,7 @@ const Booking = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Email</h4>
-                  <p className="text-gray-600">info@endorphinshealth.com</p>
+                  <p className="text-muted-foreground">info@endorphinshealth.com</p>
                 </div>
               </div>
               
@@ -305,9 +305,9 @@ const Booking = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-medium text-lg text-foreground mb-1">Hours</h4>
-                  <p className="text-gray-600 mb-1">Monday - Friday: 8:00 AM - 7:00 PM</p>
-                  <p className="text-gray-600 mb-1">Saturday: 9:00 AM - 4:00 PM</p>
-                  <p className="text-gray-600">Sunday: Closed</p>
+                  <p className="text-muted-foreground mb-1">Monday - Friday: 8:00 AM - 7:00 PM</p>
+                  <p className="text-muted-foreground mb-1">Saturday: 9:00 AM - 4:00 PM</p>
+                  <p className="text-muted-foreground">Sunday: Closed</p>
                 </div>
               </div>
             </div>
