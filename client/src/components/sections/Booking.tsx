@@ -312,7 +312,7 @@ const Booking = () => {
               </div>
             </div>
             
-            <div className="bg-gray-200 rounded-lg overflow-hidden h-80 shadow-md">
+            <div className="bg-card/50 rounded-lg overflow-hidden h-80 shadow-md border border-border">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.314048669502!2d-79.8311697847753!3d43.25909547913724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9e8a7dcfd935%3A0xf9c6231fa2a27a0!2s4631%20Palladium%20Way%2C%20Burlington%2C%20ON%20L7M%200W5%2C%20Canada!5e0!3m2!1sen!2sus!4v1652822836127!5m2!1sen!2sus" 
                 width="100%" 

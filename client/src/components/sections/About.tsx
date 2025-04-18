@@ -34,8 +34,8 @@ const About = () => {
                 className="absolute bottom-1 left-0 h-1 bg-primary/30 rounded-full w-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
               />
             </span> Health and Wellness Centre
           </h2>
