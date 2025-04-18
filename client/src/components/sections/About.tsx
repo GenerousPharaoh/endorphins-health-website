@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import clinic_exterior from "@assets/20250417_200635.jpg";
-import clinic_logo from "@assets/20250417_200647.jpg";
 
 const About = () => {
   return (
@@ -52,29 +50,39 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4 }}
-            className="relative group"
+            className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/0 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="relative">
-              <img 
-                src={clinic_exterior} 
-                alt="Endorphins Health and Wellness Centre exterior" 
-                className="rounded-lg shadow-xl w-full h-auto object-cover border border-border group-hover:border-primary/50 transition-colors duration-300"
-              />
-              <motion.div 
-                className="absolute -bottom-4 -right-4 w-20 h-20 bg-white p-1 rounded-lg shadow-lg overflow-hidden z-10"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.3 }}
-              >
-                <img 
-                  src={clinic_logo}
-                  alt="Endorphins logo"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent rounded-lg opacity-20 group-hover:opacity-0 transition-opacity duration-300"></div>
+            <div className="bg-card rounded-lg border border-border p-8 relative overflow-hidden h-full">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30"></div>
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold mb-4 text-foreground">Our Mission</h3>
+                <p className="text-muted-foreground mb-6">
+                  To provide exceptional healthcare services that empower our patients to achieve optimal health and wellness through personalized, evidence-based treatments and education.
+                </p>
+                
+                <h3 className="text-xl font-bold mb-4 text-foreground">Our Values</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 text-primary mr-2 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <span className="text-foreground"><span className="font-medium">Excellence</span> - Delivering the highest standard of care</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 text-primary mr-2 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <span className="text-foreground"><span className="font-medium">Integrity</span> - Honest, ethical patient relationships</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 text-primary mr-2 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    <span className="text-foreground"><span className="font-medium">Compassion</span> - Empathetic care for every patient</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mb-16 -mr-16 z-0"></div>
             </div>
           </motion.div>
           
