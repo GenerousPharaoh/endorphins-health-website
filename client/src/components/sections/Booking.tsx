@@ -80,7 +80,7 @@ const Booking = () => {
   }
 
   return (
-    <section id="booking" className="py-20 bg-white">
+    <section id="booking" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -90,7 +90,7 @@ const Booking = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">Book Your Appointment</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Schedule your visit to Endorphins Health and Wellness Centre and take the first step toward better health and wellness.
           </p>
         </motion.div>
@@ -103,13 +103,13 @@ const Booking = () => {
             transition={{ duration: 0.5 }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-50 rounded-lg p-8 shadow-md">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="bg-card rounded-lg p-8 shadow-md border border-border">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Full Name</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Full Name</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="Your full name" 
@@ -127,7 +127,7 @@ const Booking = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Email Address</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Email Address</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="your.email@example.com" 
@@ -146,7 +146,7 @@ const Booking = () => {
                   name="phone"
                   render={({ field }) => (
                     <FormItem className="mb-6">
-                      <FormLabel className="block text-gray-700 font-medium mb-2">Phone Number</FormLabel>
+                      <FormLabel className="block text-foreground font-medium mb-2">Phone Number</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="(123) 456-7890" 
