@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B5E07A" />
+      <stop offset="100%" stop-color="#95C459" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#circleGradient)" />
+  <circle cx="100" cy="100" r="90" fill="url(#circleGradient)" opacity="0.8" />
+  <path d="M125 75 H85 C75 75 70 85 70 95 C70 105 75 115 85 115 H105 M105 115 H115 C125 115 130 105 130 95 C130 85 125 75 115 75" fill="none" stroke="#538E2E" stroke-width="6" stroke-linecap="round" />
+  <ellipse cx="100" cy="95" rx="40" ry="50" fill="none" stroke="#538E2E" stroke-width="2" opacity="0.5" />
+  <path d="M85 65 V125" fill="none" stroke="#538E2E" stroke-width="6" stroke-linecap="round" />
+</svg>
