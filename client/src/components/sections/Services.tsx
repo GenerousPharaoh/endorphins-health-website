@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 import { services } from "../../data/services";
 import { Badge } from "../../components/ui/badge";
 import { ChevronRight } from "lucide-react";
-import treatment_room1 from "@assets/20250417_200141.jpg";
-import treatment_room2 from "@assets/20250417_200153.jpg";
-import treatment_room3 from "@assets/20250417_200255.jpg";
-import treatment_room_wider from "@assets/IMG_20250415_205603.jpg";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0].id);
@@ -102,14 +98,13 @@ const Services = () => {
 
                 <div className="relative rounded-lg overflow-hidden shadow-md group border border-border">
                   <img 
-                    src={
-                      serviceDetail.id === "chiropractic" ? treatment_room1 : 
-                      serviceDetail.id === "physiotherapy" ? treatment_room_wider : 
-                      serviceDetail.id === "massage-therapy" ? treatment_room2 :
-                      serviceDetail.image
-                    } 
+                    src={serviceDetail.image}
                     alt={`${serviceDetail.title} at Endorphins Health and Wellness Centre`}
                     className="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1581595219135-0c04719d1996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
+                    }}
                   />
                   
                   {/* Simple overlay */}
