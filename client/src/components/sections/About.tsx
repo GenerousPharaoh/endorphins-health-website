@@ -55,7 +55,7 @@ const About = () => {
             {/* Simple, clean professional image presentation */}
             <div className="relative overflow-hidden rounded-lg shadow-lg border border-border">
               <img 
-                src="/exterior-photo.jpeg" 
+                src="/clinic-exterior.jpeg" 
                 alt="Endorphins Health and Wellness Centre exterior" 
                 className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
               />
