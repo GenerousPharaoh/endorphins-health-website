@@ -224,7 +224,7 @@ const Team = () => {
                     <span className="text-primary font-bold text-2xl sm:text-3xl">{activeMember.title.charAt(0)}</span>
                   </div>
                   <div className="text-center sm:text-left">
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
+                    <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
                       {activeMember.name}
                     </h2>
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3">
@@ -239,9 +239,9 @@ const Team = () => {
 
                 <div className="space-y-5 sm:space-y-6">
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">About</h3>
-                    <div className="p-3 sm:p-4 bg-gray-50 rounded-md border border-gray-100">
-                      <p className="text-sm sm:text-base text-gray-600">{activeMember.bio}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2 sm:mb-3">About</h3>
+                    <div className="p-3 sm:p-4 bg-muted/50 rounded-md border border-border">
+                      <p className="text-sm sm:text-base text-muted-foreground">{activeMember.bio}</p>
                     </div>
                   </div>
                   

@@ -47,7 +47,7 @@ const Services = () => {
                   className={`px-4 py-3 rounded-lg transition-all duration-150 whitespace-nowrap flex-shrink-0 shadow-sm ${
                     selectedService === service.id 
                       ? "bg-primary/20 text-primary font-medium" 
-                      : "bg-card text-card-foreground hover:bg-muted"
+                      : "bg-card/80 text-card-foreground hover:bg-muted"
                   }`}
                 >
                   <span className="font-medium text-sm">{service.title.split(' ')[0]}</span>
