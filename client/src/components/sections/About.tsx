@@ -57,7 +57,7 @@ const About = () => {
               <img 
                 src="/exterior-photo.jpeg" 
                 alt="Endorphins Health and Wellness Centre exterior" 
-                className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+                className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
           </motion.div>
