@@ -40,3 +40,20 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Push to GitHub"
+author = 39154414
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "git add ."
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "git commit -m \"Project update for GitHub\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "git push -u origin main"
