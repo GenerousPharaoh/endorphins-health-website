@@ -15,7 +15,7 @@ localPort = 5000
 externalPort = 80
 
 [workflows]
-runButton = "Project"
+runButton = "Start Web App"
 
 [[workflows.workflow]]
 name = "Project"
@@ -57,3 +57,16 @@ args = "git commit -m \"Project update for GitHub\""
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "git push -u origin main"
+
+[[workflows.workflow]]
+name = "Start Web App"
+author = 39154414
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pkill -f \"node|tsx\" || true"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
